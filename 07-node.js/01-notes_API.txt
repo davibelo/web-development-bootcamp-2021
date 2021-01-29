@@ -1,0 +1,87 @@
+API
+    API is the acronym for Application Programming Interface
+    which is a software intermediary that allows two applications 
+    to talk to each other. 
+
+API Examples:
+    Joke API
+        https://sv443.net/jokeapi/v2/
+
+API endpoint
+    An API endpoint is a point at which an API connects with 
+    the software program that is requesting the service.
+    For example: An URL of a web service 
+
+API Paths
+    API paths and operations are defined in the global paths section 
+    of the API specification. All paths are relative to the API server URL. 
+    The full request URL is constructed as <server-url>/path
+    
+    Paths are used to get different services or information from 
+    the respectively API
+
+    Example:
+        Joke API
+            Endpoint: https://v2.jokeapi.dev/
+            Paths: Programming, Dark
+            URL: https://v2.jokeapi.dev/joke/Programming,Dark
+                A get request on the result URL will get a joke in 
+                Programming or Dark category
+
+API Parameters
+    Parameters are options you can pass with the endpoint 
+    (such as specifying the response format or the amount returned) 
+    to influence the response
+
+    Example:
+        Joke API
+            Endpoint: https://v2.jokeapi.dev/
+            Paths: Dark and Pun
+            Parameter: format=txt and blacklistFlags=racist
+                URL: https://v2.jokeapi.dev/joke/Dark,Pun?blacklistFlags=racist&format=txt
+                    A get request on the result URL will get a joke in 
+                    Dark or Pun category in a format of txt and not a racist joke
+
+API authentication and other example of uses
+    Open Weather API Documentation
+        https://openweathermap.org/current
+    You can create an account and get a auth key
+        xxx
+    API Call
+        Model:
+            api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+        Example: 
+            api.openweathermap.org/data/2.5/weather?appid={API key}&q=Paris&units=metric
+
+Useful application to test APIs 
+    Instead of use address bar on a browser use postman desktop app
+
+Formats of data used/returned by APIs
+    JSON, XML, HTML...
+
+JSON
+    Java Script Object Notation
+    Similar to an object in javascript
+        It is like a javascript object compressed in a single string
+    It is necessary to convert JSON to javascript object (see below)
+    You can download an extensions for chrome to have a better view of JSONs  
+        ex: JSON Viewer Pro
+
+Getting info from API
+    Use https native module from node.js 
+    Use JSON.parse() method to convert a JSON response to a javascript object
+    Use JSON.stringify() method to convert javascript object to JSON format
+
+    // example of converting javascript object to json
+    const person = {
+        name: "Davi Belo",
+        favoriteFood: "Sushi"
+    }
+    const person_json = JSON.stringify(person)
+    console.log(person)
+    console.log(person_json)
+
+Hosting web servers
+    Horoku
+        https://www.heroku.com/
+

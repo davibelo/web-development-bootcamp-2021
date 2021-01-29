@@ -1,0 +1,45 @@
+INSTALAR O NODE.JS
+    Baixar no site https://nodejs.org/en/
+    Instalar normalmente
+    Verificar a versão no terminal powershell
+        > node --version
+        > npm --version
+
+INSTALAR o VISUAL STUDIO CODE
+    Baixar no site https://code.visualstudio.com/
+
+INSTALAR EXTENSÃO CODE Runner
+    Dentro do VS Code, baixar a extensão "Code Runner"
+    Permite usar um atalho de teclado para rodar o código
+
+Algoritmos
+    é a base da programação
+    é uma sequência de passos a ser seguida
+    linguagens de baixo nível consideram a arquitetura do hardware
+
+Estrutura de dados
+    A forma que os dados são organizados, ditam as regras que os dados devem seguir
+    Listas, árvore, tabelas, fila (FIFO: first in, first out), pilha (LIFO: last in, first out)
+    Exemplo de estrutura de dados básicas que são usadas para construir outras estruturas de dados
+        float, int, boolean, etc
+    Existem dados variáveis e constantes          
+    Operações com estrutura de dados:
+        atributos
+        aritméticas
+        relacionais
+        lógicas
+
+JAVASCRIPT
+Atalhos para rodar o código
+    Estando com o arquivo aberto no VS Code, usar CTRL + ALT + n
+        ou usar o terminal e colocar no powershell
+        > node [nome do arquivo]
+
+    Outra forma de rodar códigos js, html, CSS é usar o site:
+        https://jsfiddle.net/
+
+    Outra forma de rodar código js é usar o console no navegador
+        No windows basta apertar F12 e clicar na aba de console
+        Nesse caso o console usa as bibliotecas carregadas na página
+        Para usar todas as bibliotecas do js, pode-se usar o site:
+        https://jquery.com/

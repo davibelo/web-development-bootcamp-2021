@@ -1,0 +1,181 @@
+/* General */
+
+body {
+    font-family: "Montserrat";
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+.big-heading {
+    font-size: 3.5rem;
+    line-height: 1.5;
+}
+
+.container-fluid {
+    padding: 3% 10%;
+}
+
+.colored1-section {
+    background-color: #fc506a;    
+    color: white;
+}
+
+.colored2-section {
+    background-color: #ef8172;
+    color: white;
+}
+
+.white-section {
+    background-color: white;
+}
+
+/* Navigation Bar and Title section */
+
+#navbar-title-section {
+    padding-bottom: 10% ;
+    text-align: left;
+}
+
+.navbar {
+    margin: 0 -15px 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.nav-item {
+    padding: 0 10px;
+}
+
+.nav-link {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.title-col {
+    padding: 5% 0 0%;
+}
+
+.download-button {
+    margin: 5% 5% 0 0;
+}
+
+.title-image {
+    margin-top: 10%;
+    width: 60%;
+    transform: rotate(25deg);
+    position: absolute;
+    right: 20%;
+  }
+
+/* Features Section */
+
+#features-section {
+    position: relative;
+    padding: 10% 0;
+    z-index: 1;
+}
+
+.features-icon {
+    color: #ef8172;
+    font-size: 4rem;
+}
+
+.features-icon:hover {
+    color: #fc506a;
+}
+
+.features-text {
+    font-weight: 300;
+}
+
+/* Testemonials Section */
+
+.testimonials-text {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.testimonials-image {
+    width: 15%;
+    /* Making the border to be a circle */
+    border-radius: 100%;
+    margin: 10px;
+}
+
+.testimonials-name {
+    font-size: 1rem;
+}
+
+.testimonials-carousel-buttons {
+width: 15%;
+}
+
+/* Press Section */
+
+#press-section {
+    padding-bottom: 3%;
+}
+
+.press-image {
+    width:15%;
+    margin: 20px 20px 50px;
+}
+
+/* Pricing Section */
+
+#pricing-section {
+    padding: 0 5%;
+}
+
+#pricing-title {
+    margin: 10% 0 1% 0;
+    font-size: 2.5rem;
+}
+
+#pricing-subtitle {
+    margin: 0 0 5% 0;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+.pricing-col {
+    padding: 3% 20px;
+}
+
+/* CTA section */
+
+#cta-section {
+    padding: 10% 0;
+}
+
+/* Footer Section */
+
+#footer-section {
+    font-size: 0.8rem;
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
+
+
+/* Media Query */
+
+@media (max-width: 800px) {
+
+    #navbar-title-section {
+      text-align: center;
+    }
+
+    .title-image {
+      position: static;
+      transform: rotate(0);
+    }
+}

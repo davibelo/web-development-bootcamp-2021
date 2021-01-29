@@ -1,0 +1,45 @@
+O js pode ser executado no browser = frontend
+ou no servidor = backend
+
+Características para execução no browser:
+Para testar um código no browser, acessar o console
+apertando F12 no browser e indo na aba console
+
+O objeto principal no browser é o window
+Este pode ser acessado digitando window ou this 
+
+> window
+> this
+
+Criando uma variável com var, essa vai para o objeto window
+ex: 
+> var a = "texto" //criando
+> window.a //acessando
+> this.a //acessando
+
+Criando uma variável com let, essa não vai para o objeto window
+ex: 
+> let b = "texto"
+> b  
+
+Constante também não vai para o objeto
+ex:  
+> const c = "123"
+> c
+
+Criando funções
+O exemplo abaixo cria uma função dentro de window
+> function f1() { return this === window }
+> window.f1()
+
+O exemplo abaixo cria uma função fora do window
+> const f2 = () => console.log( this === window)
+> f2()
+
+Uma boa prática para fugir dessas confusões de escopo acima
+é criar sempre um escopo novo através de um objeto
+ex:
+
+> let pessoa = {nome: "Ana", falar: function(){return `Eu sou ${this.nome}`}}
+> pessoa.nome()
+> pessoa.falar()

@@ -1,0 +1,67 @@
+JQuery is a library to simplify use of queries on javascript code.
+    Example 1:
+        Javascript:
+            document.querySelector("h1")
+        JQuery
+            $("h1")
+    Example 2: 
+        Javascript:
+            document.querySelectorAll("button")
+        JQuery
+            $("button")
+    OBS: you can refer to elements, classes (using "." before class name) 
+    or ids (using # before id name)
+    
+To incorporate JQuery in your website
+    Download or use a CDN - Content Delivery Network
+    Google CDN 
+        https://developers.google.com/speed/libraries
+            Put JQuery script tag above javascript script tag, like this in the end of body section:
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="index.js" charset="utf-8"></script>
+    OBS: The "min" on the jquery link refers to minified code
+        You can minify codes to reduce loading times on various sites like:
+            http://minifycode.com/html-minifier/
+
+Useful Jquery methods:
+    // Adding 2 css classes to an element
+        $("h1").addClass("big-title margin-50")
+    // Remove a css class of an element
+        $("h1").removeClass("big-title")
+    // Edit text inside an element  
+        $("h1").text("Click me")
+    // Edit inner html
+        $("h1").html("<em>Hey</em")
+    // Set attributes values
+        $("a").attr("href", "http://www.yahoo.com.br")
+    // Get classes as attributes
+        $("h1").attr("class")
+    // Dynamic Click
+        $("h1").click(function(){
+            $("h1").css("color","red")
+        })
+        OBS: you can also apply this for multiple elements
+    // Use "$(document) to refer for entire documento
+        $(document).keypress(function(event){
+            $("h1").text(event.key)
+        })
+    // Use "on" method to add event listeners 
+        $("h1").on("mouseover",function(){
+            $("h1").css("color","black")
+        })
+    // Use "before" or "after" method to add HTML elements 
+        $("h1").before(<button>New button</button>)
+    // Use "prepend" or "append" methods to add HTML elements inside other elements
+    // Use "remove" method to remove elements on HTML
+    // Use "hide","show" or toogle methods to hide/show/toogle visibility elements on HTML
+    // Other interesting methods to change visibility:
+        "fadeIn", "fadeOut", "fadeToogle"
+        "slideUp", slideDown, slideToogle
+    // Use animate method to use custom animation on website
+        $("button").on("click", function(){
+            $("h1").animate({opacity:0.25})
+        })
+    // You can combine methods
+        $("h1").slideUp.animate({opacity:0.25})
+
+    

@@ -1,0 +1,37 @@
+CODE REFACTORING
+    After have written a code, it is a good practice to refactor your code
+    This means to make you code cleaner and better understandable
+    Below 4 principles of code refactoring in order of IMPORTANCE:
+    1. Readability
+        Make it easy to understand
+    2. Modularity
+        Make it organized and easy to reuse and 
+    3. Efficiency
+        Make it fast to run
+    4. Length
+        Make it shorty
+    Remember the order of importance. 
+    It is not good practice to make your code shorter and less readable for example
+
+Code Golf - Competition to make a shorter code
+
+classes x ids
+    Because of CSS hierarchy, it is better to use ids only where is 
+    strictly necessary
+    Even if you have "one of a kind" element, think if it is necessary 
+    to use an id
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+

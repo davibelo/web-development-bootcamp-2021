@@ -1,0 +1,89 @@
+To verify spell checking when typing, 
+use the VS Code extension:
+Code Spell Checker 
+
+--- x ---
+
+WEB DEVELOPMENT BOOTCAMP
+
+A website consists in 3 types of codes,
+each one is responsible for one part of website:
+    HTML = structure 
+    CSS = style
+    JavaScript = functionalities  
+
+To rapidly test web code, you can use:
+https://codepen.io/pen/
+
+HTML CODE
+    HTML is a text markup language 
+    Examples of books marked with HTML:
+    https://sherlock-holm.es/html/
+
+Examples of documentation of HTML:
+    https://www.w3schools.com/html/
+    https://developer.mozilla.org/en-US/docs/Web/HTML
+    https://devdocs.io/
+
+<!-- Example of HTML:-->
+<center>
+<hr size = '3'>
+<h1> The capital </h1>
+<br> 
+<h3> by </h3>
+<h2> Karl Marx </h2>
+<hr size = '3'>
+
+To visualize the history of web sites, use:
+https://web.archive.org/
+
+
+
+To visualize .html file that is being developed on VS Code 
+    Just right click on the file and click copy path
+    Paste the content on a web browser
+
+Use any character of unicode on html code:
+    Go to https://unicode-table.com
+    Find what you want, rest the mouse on, click copy
+    Paste on your code
+
+Correct indentation of html code:
+    Install Beautify extension
+    Right click on code 
+    Select Command Palette (or CTRL + SHIFT + P)
+    Type Beautify (choose selection or file)
+
+Using shortcuts of html code:
+    Emmet shortcuts are built in VS Code
+    Just type the letter of the element you want and choose in menu for autocompletion
+    ex: type "a" and choose "a" from menu, emmet will write this for you:
+    <a href=""></a>
+
+HTML Boiler Plate
+    is a template of html code
+    You can use some extension to generate it automatically
+    
+    Example: 
+    Emmet shortcuts are built in VS Code
+    Type html:5 (or !) on a body of a .html file 
+    After this the code below appears that represents a html minimum code
+    bringing a head and a body of a website
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+

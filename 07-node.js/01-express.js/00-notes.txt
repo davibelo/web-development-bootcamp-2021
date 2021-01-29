@@ -1,0 +1,36 @@
+Express.js is a framework of node.js
+Framework is a bunch of code that adds functionalities to the language
+
+You can consult most used javascript frameworks on:
+    https://2019.stateofjs.com/
+        OBS: change the year or search for "state of js"
+
+Installing express.js
+    See details on https://expressjs.com/en/starter/installing.html
+
+To access local ports on a browser, write this on address bar:
+    localhost:<port>
+
+Web servers (and clients) works with HTTP protocol, see more at:
+    https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+
+HTTP return codes 101
+    1** hold on (wait)
+    2** here you go (success)
+    3** go away (security issues)
+    4** you fucked up (client error)
+    5** I fucked up (server error)
+
+HTTP returns on wikipedia
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+    Informational responses (100–199)
+    Successful responses (200–299)
+    Redirects (300–399)
+    Client errors (400–499)
+    Server errors (500–599)    
+
+
+
+
+
+

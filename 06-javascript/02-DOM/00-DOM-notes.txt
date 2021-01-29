@@ -1,0 +1,56 @@
+DOM - Document Object Model
+    Permits to change your website dynamically 
+    Use DOM HTML Tree visualizers to help understand the website flow
+    Type "document" on browser console to access DOM elements, properties, methods
+        example >document.firstElementChild
+        After selected, if you type Enter, the console will show that element
+    
+    Save a DOM attributes on variable and use later
+        example: 
+            var heading = document.firstElementChild
+            heading.innerHTML = "Good Bye"
+            heading.style.color = red
+    
+    Select and change attributes using getElements methods
+        example:
+            document.getElementById("title").innerHTML = "GoodBye"
+            document.getElementsByClassName("list")[2].innerHTML = "Terceiro"
+    
+    Find elements with querySelector methods
+        example:
+            document.querySelector("#google-link").style.color="green"
+            document.querySelector(".list a").style.color="orange"
+            document.querySelector("li a").style.color="red"
+            document.querySelector("input").click()
+            OBS: Use querySelectorAll, if you want to select more than one item
+    
+    Get Attributes from html elements
+        document.querySelector("a").getAttribute("href");
+        
+    OBS: The style differ from CSS like:
+        example: 
+            CSS:
+                #title {font-size: 5rem}
+            javascript:
+                document.querySelector("#title").style.fontSize="5rem"  
+    
+    Add classes dynamically on javascript to change css style
+        example:
+            javascript:
+                document.querySelector("button").classList.add("invisible")
+            css:
+                .invisible {visibility:hidden}
+        
+    Add responsiveness to your website with add event listeners methods
+        example:
+            document.getElementById("myBtn").addEventListener("click", displayDate);
+        https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+
+   
+    Use DOM documentation for more details:
+        https://www.w3schools.com/js/js_htmldom.asp#:~:text=The%20DOM%20is%20a%20W3C,and%20style%20of%20a%20document.%22
+        https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+    
+
+    
+    

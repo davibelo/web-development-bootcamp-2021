@@ -1,0 +1,31 @@
+body {
+    background-color: #dff9fc;
+}
+
+hr {
+    border-color: #3b6978;
+    border-style: none;
+    border-top-style: dotted;
+    border-width: 5px;
+    height: 0px;
+    width: 5%;
+}
+
+h1 {
+    color: #204051;
+}
+
+h2 {
+    color: #204051;
+}
+
+h3 {
+    color: #204051;
+}
+#profile-photo {
+    width:128px;height:128px;
+}
+
+#profile-photo:hover {
+    background-color: #204051;
+}

@@ -1,0 +1,195 @@
+Making a icon for your website (Favicon):
+    Make or find the .ico file
+    https://www.favicon.cc/
+
+Finding images for your website
+    https://pngtree.com/
+    https://www.flaticon.com/
+    https://www.freepik.com/
+    https://giphy.com/
+    https://stock.adobe.com/
+    https://www.google.com/
+
+Making divisions on websites
+    Use tag <div>
+
+HTML Box Model
+    Elements on html have a associated box structure
+    with 4 characteristics:
+        Width/Height    = size of element on screen
+        Padding         = size of space between text and border
+        Border          = size of a border around element
+        Margin          = size of space between border and limits of screen
+
+Block x Inline x Inline-Block Elements
+    Block Elements
+        It starts on a new line, and takes up the whole width
+            Paragraphs <p>
+            Headers <h>
+            Divisions <div>
+            Lists <ol>, <ul>, <li>
+            Forms <form>
+    Inline Elements
+        Displays an element as an inline element (like <span>)
+        Any height and width properties will have no effect
+            Spans <span> - serves to mark up a part of a text
+            Images <img>
+            Anchors <a>
+    Inline-Block Elements
+        Displays an element as an inline-level block container. 
+        The element itself is formatted as an inline element, 
+        but you can apply height and width values
+
+Display Property
+    Can specify the display behaviour of an element on display
+    Make a block behave like inline or inline like a block, or both, ex:
+        HTML:
+        <p> I'm Davi </p>
+        CSS:
+        p {display: inline;}
+
+    A display value of "inline-block" can be used to 
+    make a element behave as an inline and block at the same time.
+    allowing 
+        HTML:
+        <p> I'm Davi </p>
+        CSS:
+        p {display: inline-block;}
+
+    A display value of "none" makes element disappear totally
+    as it doesn't exists.
+        If you want to hidden the element 
+        Use the property visibility: hidden 
+
+CSS Static and Position
+    Influences Position:
+        1. Content
+            If your text or image is big, it will occupy a big space on screen
+        2. HTML code
+            The HTML code defines the order the elements are shown on screen
+        3. Hierarchy
+            A child element will appears in front of parent elements on screen
+
+CSS Position
+    Position on CSS can be:
+        1. Static
+            Using just HTML code
+        2. Relative
+            Adds coordinates values to the element relative to HTML code position
+            ex: adding 50px on top of image relative to the HTML position making it go down 50px
+            img {
+                position: relative;
+                top:50px;
+                }
+            This doesn't affect other elements positions.
+        3. Absolute
+            Adds coordinates values to the element relative to its parent element
+            If the parent occupies all width of screen, looks like it is an absolute positioning
+            ex: making <img> position become 50px from the left side of screen
+            img {
+                position: absolute;
+                left: 50px;
+                }
+            IMPORTANT: This affect other elements positions!!
+            In the example above, the element below could come up, occupying the void left by the element
+        4. Fixed
+            The position is fixed on screen, doesn't change even with scrolling
+
+CSS z-index 
+    It represents object order in z-axis, this defines what appears in front on the webpage
+    It doesn't work with position fixed
+    Use integer numbers as z-index. Higher the number, closer to the viewer it becomes
+    The default z-index of all elements is 0 !!!
+    Elements with the same z-index, the order become HTML order !!!
+    
+
+CSS Float
+    You can make elements float and allow text to be wrapping around
+    ex:
+        element{float:left;}
+    OBS: Good practice is to use float only when you want to making text wrap around
+    Otherwise, use positioning
+
+CSS Clear
+    You can make elements position itself making sure nothing is floating around
+    ex: 
+        element{clear:left;}
+    OBS: Good practice is to use float only when you want to making text wrap around
+    Otherwise, use positioning
+
+Property text-align
+    Sets align of elements
+        IMPORTANT: 
+        If elements have width, to align centered it is necessary to set margin auto
+        ex: 
+            element {margin: 0 auto}
+
+CSS Fonts
+    There are 2 ways to change fonts on CSS
+    
+    1. The property is font-family
+        Set property with fonts (in order of trying) and font-family values
+        ex:
+        body {
+            font-family: verdana, sans-serif;        
+        }
+        The website below lists Web Safe fonts and other information
+        https://www.cssfontstack.com/
+
+    2. Font embedding
+        Go to https://fonts.google.com/
+        Select fonts you want to add
+        Use the embed links and CSS rules provided by the website
+
+Text generator for web design
+    To generate random text to fill some web design, use:
+    https://loremipsum.io/
+
+Text Sizes
+    Ways to specify text sizes
+    Options 2 and 3 will be dynamic, according to text size of client browser preferences
+    Option 1 will change with website zoom only
+    1. Pixels
+        ex: h1 {font-size:100px;}
+    2. Percentage (100% = 16px)
+        ex: h1 {font-size:100%;} 
+    3. em (1em = 16px)
+        ex: h1 {font-size:1em}
+    OBS: Pay attention using 2 and 3 because it consider the size of parent objects
+    making child text size specification apply on top of parent object text size
+    To use "em" but ignore parent text-size, use "rem" (CSS 3.0)
+    4. em (1rem = 16px)
+        ex: h1 {font-size:1rem}
+
+CSS Button generator
+    You can use website bellow to generate CSS code of a Button
+        https://cssbuttoncreator.com/
+
+HTML and CSS practice and exercises:
+https://www.frontendmentor.io/
+
+
+
+
+
+ 
+    
+
+
+
+
+
+
+
+
+
+        
+                
+        
+
+
+
+
+
+
+

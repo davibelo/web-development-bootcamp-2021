@@ -1,0 +1,74 @@
+Intro to javascript
+    javascript was created by Netscape to allow frontend
+    have some functionalities without needing to communicate
+    with backend servers
+
+History of javascript
+    First was created LiveScript and JScript 
+    The standardized script was ECMA Script
+        ES5, ES6...
+    
+Java x Javascript
+    The name java was only to get the hype of java name
+    Java is compiled, javascript is interpreted
+
+Ideia of javascript
+    It is similar to a theatre script
+    It tells what will happen and how actors should behave
+        On the web, actors are elements, script, javascript
+
+Use of javascript
+    Used in many frameworks and even on backend
+    Supported by all browsers
+
+Coding and testing javascript
+    1. Using developers tools of chrome
+        Go to source, click on right arrow and select snippets
+    2. Use console on web browsers
+        if you need to run more than one line, use shift+enter
+            or just copy and paste code
+        if you want to clear all variables, just hit F5
+        if you use https://jquery.com/, you can use all javascript libraries
+        you can type "debugger" to enter debug environment 
+        
+    3. Use https://jsfiddle.net/
+    4. Use node.js 
+        install node.js
+        install code runner extension on vs code
+        use CRTL + ALT + N to run the javascript code
+        remember that some functions related to frontend will not work
+    
+
+Javascript documentation
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript
+    https://www.w3schools.com/js/
+
+Adding javascript on html code
+
+    1. Direct on html elements attributes (not recommended):
+        <body onload="alert('Alert')">
+            <h1>Hello!</h1>
+        </body>
+
+    2. Creating a script element:
+        <body>
+            <h1>Hello!</h1>
+            <script type="text/javascript">
+                alert("HELLOOO");
+            </script>
+        </body>
+
+    3. Using an external file:
+        <body>
+            <h1>Hello!</h1>
+            <script src="index.js"></script>
+        </body>
+    OBS: Attention with the place you put <script>. That's matter!
+    For example: If you put a <script> to change some <h1> but
+    put it before first <h1> you will get an error.
+    A good practice is to put <script> call in the end of <body> tag
+
+
+
+
+

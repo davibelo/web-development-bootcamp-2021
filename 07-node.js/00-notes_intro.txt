@@ -1,0 +1,81 @@
+FullStack = Backend + Frontend
+    Frontend = HTML + CSS + javascript
+    Backend = server + application + database
+
+    Restaurant Analogy 
+        Restaurant hall (front-of-house) = Frontend
+        Back-of-house
+            Server = kitchen
+            Application = chef
+            Database = larder
+
+    Backend application can be written in "node.js"
+    Other options are: 
+        PHP
+        Ruby
+        Java
+
+    There are some code written in those languages to speed up
+    developing, these packages of codes are called FRAMEWORKS
+        Examples:
+            PHP --> CakePHP
+            Ruby --> Ruby on Rails
+            Java --> Spring
+            Node.js --> Express.js  
+     
+Javascript is locked to be used on web browser only
+Node.js get javascript out of web browser to implement desktop/server applications
+
+After installing node.js, you can execute javascript files on terminal by typing:
+    > node <name of javascript file>
+    ex: > node index.js
+
+You can also execute node in REPL (likE a prompt) mode by typing node on terminal
+    REPL = Read, Evaluation, Print, Loop
+    Type CTRL+C or .exit to exit
+    Type CTRL+Z to stop executing
+
+Browse on "https://nodejs.org/docs/latest/api/" to view all APIs available on node
+
+To manipulate external modules use npm
+    npm = node package manager
+    npm is installed with node.js
+
+To view all modules and documentation produced for node.js browse:
+    https://www.npmjs.com/
+    OBS: The documentation includes how to install and use those packages
+
+Example of package:
+    Generate fantasy content
+        https://www.npmjs.com/package/fantasy-content-generator
+
+To first initialize your module type below comando on project folder:
+    >npm init
+
+After initialize your module, a .json file is created with module details
+
+Example of installing:
+    > npm install --save fantasy-content-generator
+
+After installing some npm module, npm creates "node_modules" folder with the imported
+code and modify .json file to show dependencies
+
+Other way to run node is to install/use nodemon
+    Nodemon is a node utility that monitor for changes in your source code  
+    and restart the application automatically
+        For details go: https://www.npmjs.com/package/nodemon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

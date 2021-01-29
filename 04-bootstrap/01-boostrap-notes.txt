@@ -1,0 +1,124 @@
+WEB DEVELOPMENT CONCEPTS
+
+Frontend = user interface
+    What user sees
+    Languages: HTML, CSS, javascript
+Backend = "behind the scenes" work/code
+    What gives full functionality to Frontend
+    Languages: node.js, .NET, PHP, SQL...
+
+Boostrap
+    An open-source frontend library/framework
+    https://github.com/twbs/bootstrap
+    https://getbootstrap.com/
+
+    Using style frameworks, you don't need to write CSS code to style your elements
+    It is just refer to the framework classes on HTML style code.
+
+    In Bootstrap website, there is template of HTML header with all necessary to load bootstrap features
+    https://getbootstrap.com/docs/4.5/getting-started/introduction/
+
+    If you want long-term support for your website, you can download Boostrap files, make your site and 
+    upload those files to your web server guaranteeing the your site will run with that particular 
+    version of Boostrap
+
+Importing styles
+    Important to know that style links are processed in the order of HTML code.
+    So, for example, if you import bootstrap style, but want to apply other custom style
+    it is necessary to put it below bootstrap import.
+    To import (embed) font, do it before Boostrap.
+        ex: 
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css">
+
+Website for testing frameworks
+https://www.codeply.com/
+
+Web Design 101
+    Before starting to code your website it is necessary to make a initial design of it
+    A draft of layout and basic flows is called "wireframe"
+    The website below have some frames that you can print and use to sketch your website design
+    https://sneakpeekit.com/
+    Other option is to use this other option below and build your wireframe online
+    https://balsamiq.cloud/ or 
+    https://www.diagrams.net/
+
+
+    You also can produce a screenshot called "mockup" to show a client a sample of the possible final work
+    To decide the pattern of the User Interface of your site, you can go to website like:
+    https://ui-patterns.com/
+    
+    A website of examples of other websites:
+    https://dribbble.com/
+
+Boostrap Containers 
+    Boostrap Containers are classes of <div> element
+    Containers are automatically responsive, adjusting according to screen size
+    container-fluid is always 100% screen width   
+    You can apply padding or margins to layout everything inside de container
+    
+
+Boostrap Grids
+    You can divide Containers with row and columns using Boostrap Grids.
+    Boostrao Grids are classes of <div> element
+    You can use automatically sizing of grids (row, col) or set width (col-1 to col-12).
+    You can also use responsive classes that adjust according with screen size (col-lg-3 col-md-4 col-sm-6)
+    If you use only col-lg-6, you apply 6 only on large screens, and anything different will be one col per row
+
+
+Boostrap Buttons
+    This is a class with already stylized buttons
+    See documentation for details about all possibilities
+
+Boostrap Carousel
+    This is a class useful to circle items on website
+    See documentation for details about all possibilities
+
+Boostrap Cards
+    It is a stylized card that has a image, a header, a body and a footer
+    See documentation for details about all possibilities
+    Use card, card-deck classes or mix card and grids
+
+Mobile Friendly
+    Google penalize web sites those are not web Friendly
+    To verify some web site, you can use:
+    https://search.google.com/test/mobile-friendly
+
+    To make your site be mobile-friendly:
+        1. Make another website
+        ex: http://m.facebook.com
+        2. Make it responsive
+            Use media query: @media <type> <feature>
+            ex1: @media print {CSS Style code for print}
+            ex2: @media (max-width: 900px) {CSS Style code for that condition}
+            ex3: @media (max-width: 900px) and (min-width: 300px) {CSS Style code for that condition}
+            https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+
+Boostrap Design Library
+    This site has a lot of bootstrap built examples:
+    https://bootsnipp.com/
+    For example, search there for login, price cards...
+
+Font Icons
+    You can use icons inside your text:
+    https://fontawesome.com/icons
+    Insert Font awesome CDN on HTML head
+        <script src="https://kit.fontawesome.com/0c962344da.js" crossorigin="anonymous"></script>
+    
+    Choose your icon on the website
+    Copy code for that icon
+    Insert Font Awesome code in your text
+    ex: 
+    Font awesome code: <i class="fab fa-apple"></i>
+    Font awesome code in context: <button type="button"><i class="fab fa-apple"></i> Download</button>
+
+    OBS: <i> tag (italic) is used, but the icon doesn't get italic, it is used only because it is the shortest tag
+    You can use <span> tag for example, like this:
+    <span class="fab fa-apple"></span>
+
+
+

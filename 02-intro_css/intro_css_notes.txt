@@ -1,0 +1,155 @@
+CSS - Cascading Style Sheets
+    CSS is used to style web pages
+
+To find beautiful color sets:
+    Go to https://colorhunt.co/
+    Choose the pallette 
+    CLick on the color to copy the hexadecimal code
+    Insert in the html code
+
+CSS Coding directly on HTML - Option 1
+    <body style="background-color: white;">
+    Code above will apply this color on all body element
+    remember to put "#" before color
+
+CSS Coding directly on HTML - Option 2
+Another way to code the CSS style is to create a style element 
+inside a head element on html code, like example below
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi Belo's Personal Website</title>
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+
+CSS Coding external of HTML 
+The BEST way to code CSS style is to create a CSS file
+and refer to it with links on head of html files like:
+<head>
+    ...
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+
+CSS Documentation
+https://www.w3schools.com/css/default.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS
+https://devdocs.io/css/
+
+CSS Default Styling
+    Browsers have some default CSS styling
+    So if you do not define something on your css file
+    the default browser style will remain 
+
+Visualize/Debug CSS 
+    For facilitate view of CSS implementation
+    you can install pesticide extensions on firefox or chrome
+    On the browser, remember you can use dev tools and visualize page code
+
+CSS Tag selector Syntax
+    selector {property: value;}
+        selector = WHO you want to modify
+        property = WHAT you want to modify
+        value = HOW you want to modify
+    ex: 
+    h1 {font-size: medium;}
+
+CSS Good Practice
+    Putting properties in alphabetical order inside the code
+    ex:
+    h1 {
+        color: #204051;
+        font-size: medium;
+    }
+
+CSS Comments 
+    To comment on CSS code use :
+    /* comment here */
+
+CSS Class selector syntax
+    What if you have 2 classes of images and wants to change 
+    the same attribute differently
+    This is possible using class selector
+    ex:
+    HTML:
+    <img id="bacon" src="bacon.jpg" alt="bacon-picture"
+    <img id="brocolis" src="brocolis.jpg" alt="brocolis-picture"
+    CSS:
+    .bacon {
+        background-color: red;
+    }
+    .brocolis {
+        background-color: green;
+    }
+
+CSS Id selector syntax
+    Instead of class selectors you can use id selectors
+    However, the id is unique and apply style on just one item 
+    ex:
+    HTML:
+    <img id="bacon" src="bacon.jpg" alt="bacon-picture"
+    <img id="brocolis" src="brocolis.jpg" alt="brocolis-picture"
+    CSS:
+    #bacon {background-color: red;}
+    #brocolis { background-color: green;}
+    
+    Useful:
+    You can use id to link elements on your page in <a> tags
+    ex:
+    <a class="nav-link" href="#footer-section">Contact</a>
+    
+
+CSS Selectors Hierarchy
+    Important to know which order the selector 
+    will be considered to apply style
+    (id style) overwrites (class style) overwrite (tag style) overwrite (browser tag style)
+
+CSS Dynamic
+    You can use a pseudo-class to make a dynamic style change 
+    ex:
+    It will make the color change when a mouse pass over the object
+    img:hover{color: orange;} 
+    or
+    .class:hover{color: orange;} 
+    or
+    #id:hover{color: orange;}
+
+CCS Other Selectors 
+    To see other type of selector go to Documentation
+    https://www.w3schools.com/cssref/css_selectors.asp
+
+ADVANCED SELECTION ON CSS
+
+Multiple selection
+    You can set multiple tag using one selection
+    ex:
+    h1, h2, h2 {
+        font-family: "Montserrat"
+    }
+
+Hierarchical Selectors
+    You can set a specific id/class that CONTAINS a id/class
+    ex: (setting title1 only inside container1)
+        HTML: 
+            <div class="container1">
+            <h1 id="title">
+                Hello
+            </h1>
+            </div>
+        CSS:
+            .container1 #title {color:red;}
+
+Combined Selectors
+    You can set a specific an id/class OF A SPECIFIC TAG
+        HTML: 
+            <div class="container1">
+            <h1 id="title">
+                Hello
+            </h1>
+            </div>
+        CSS:
+            h1#title {color:red;}
