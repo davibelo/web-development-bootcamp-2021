@@ -84,4 +84,5 @@ Getting info from API
 Hosting web servers
     Horoku
         https://www.heroku.com/
+        look for guides and tutorials on the site
 
