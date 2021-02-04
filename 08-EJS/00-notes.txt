@@ -1,0 +1,7 @@
+EJS - Embedded JavaScript templating
+    EJS is a node.js module and templating language that lets you generate
+    HTML markup with plain JavaScript. 
+    Further documentation can be found on:
+        https://ejs.co/
+
+
