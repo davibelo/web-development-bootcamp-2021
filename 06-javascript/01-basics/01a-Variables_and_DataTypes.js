@@ -17,4 +17,6 @@ var my_name = "Davi"
 var your_name = "Lara"
 console.log(my_name + " e " + your_name)
 
+// scope
+
 
