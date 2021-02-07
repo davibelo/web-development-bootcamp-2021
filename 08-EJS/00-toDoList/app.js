@@ -10,6 +10,8 @@ const app = express();
 //let items = [];
 let items = ["buy ingredients","cook meal","eat"];
 
+let workItems = ["respond e-mails", "call boss"]
+
 // setting express app to use ejs as view engine
 app.set("view engine", "ejs");
 
@@ -31,18 +33,37 @@ app.get("/", function (req, res) {
     // rendering html template on list.ejs, substituting
     // variables as shown below on js object argument
     res.render("list", {
-        kindOfDay: day,
+        listTitle: day,
         newListItems: items
     });
 });
 
 // post response on "/"
 app.post("/", function (req, res) {
+    console.log(req.body)
+    // assigning item = request body new item
     let item = req.body.newItem;
-    items.push(item);
-    // refresh site
-    res.redirect("/");
+    // checking from which list the posting is coming
+    if (req.body.list === "work"){
+        workItems.push(item);
+        res.redirect("/work");
+    } else {
+        items.push(item);
+        res.redirect("/");
+    }  
 });
+
+app.get("/work", function (req, res){
+    res.render("list", {
+        listTitle: "work",
+        newListItems: workItems
+    });
+})
+
+
+app.get("/about", function (req, res){
+    res.render("about", {});
+})
 
 app.listen(3000, function () {
     console.log("Starting server on port 3000 [OK]");

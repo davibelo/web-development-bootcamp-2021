@@ -24,3 +24,15 @@ Good Practice:
     1. Prefer to put all the logic on the server (node.js)
         use scriptlet ejs tag only as last option
 
+EJS Layouts
+    You can create other .ejs files and include those ejs 
+    inside other ejs files.
+        Example: 
+            Make header.ejs and footer.ejs separately
+                To include those layouts inside other .ejs:
+                    <%- include('header'); -%>
+                    and
+                    <%- include('footer'); -%>
+
+
+
