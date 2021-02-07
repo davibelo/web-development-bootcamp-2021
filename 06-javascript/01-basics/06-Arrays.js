@@ -68,3 +68,6 @@ function WhoIsPaying(names) {
 }
 
 WhoIsPaying(names)
+
+// const array cannot be re-assigned to a different array
+// but push method can be used to add items

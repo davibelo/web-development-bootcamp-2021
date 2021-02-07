@@ -86,3 +86,8 @@ Hosting web servers
         https://www.heroku.com/
         look for guides and tutorials on the site
 
+Making your own modules on node.js
+    See:
+        https://www.w3schools.com/nodejs/nodejs_modules.asp
+        https://nodejs.org/api/modules.html
+        or check toDoList example on 08-EJS folder 

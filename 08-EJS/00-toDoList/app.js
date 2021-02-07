@@ -1,16 +1,20 @@
+//jshint esversion:6
+
 // importing external modules
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+
+// personal module date.js
+const date = require(__dirname + "/date.js");
 
 // creating an express app
 const app = express();
 
 // creating items array in the global scope
 //let items = [];
-let items = ["buy ingredients","cook meal","eat"];
-
-let workItems = ["respond e-mails", "call boss"]
+const items = ["buy ingredients","cook meal","eat"];
+const workItems = ["respond e-mails", "call boss"]
 
 // setting express app to use ejs as view engine
 app.set("view engine", "ejs");
@@ -22,14 +26,11 @@ app.use(express.static("public"));
 
 // get response on "/"
 app.get("/", function (req, res) {
-    let today = new Date();
-    let options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-    };
-    let day = today.toLocaleDateString("en-US", options)
 
+    // using date.js module
+    day = date.getDate();
+    // day = date.getWeekday();
+    
     // rendering html template on list.ejs, substituting
     // variables as shown below on js object argument
     res.render("list", {
