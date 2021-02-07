@@ -7,10 +7,16 @@ const ejs = require("ejs");
 const app = express();
 
 // creating items array in the global scope
-let items = [];
+//let items = [];
+let items = ["buy ingredients","cook meal","eat"];
 
 // setting express app to use ejs as view engine
 app.set("view engine", "ejs");
+
+// using bodyParser to read body responses
+app.use(bodyParser.urlencoded({extended:true}));
+// serving the public folder to client
+app.use(express.static("public"));
 
 // get response on "/"
 app.get("/", function (req, res) {
@@ -23,7 +29,7 @@ app.get("/", function (req, res) {
     let day = today.toLocaleDateString("en-US", options)
 
     // rendering html template on list.ejs, substituting
-    // letiables as shown below on js object argument
+    // variables as shown below on js object argument
     res.render("list", {
         kindOfDay: day,
         newListItems: items
@@ -31,7 +37,6 @@ app.get("/", function (req, res) {
 });
 
 // post response on "/"
-app.use(bodyParser.urlencoded({extended:true}));
 app.post("/", function (req, res) {
     let item = req.body.newItem;
     items.push(item);

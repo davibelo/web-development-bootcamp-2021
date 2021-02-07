@@ -153,3 +153,11 @@ Combined Selectors
             </div>
         CSS:
             h1#title {color:red;}
+
+Selecting elements with specific attributes
+    You can select elements with specific attributes
+    using [] and writing the attributes values inside
+    CSS:
+        input[type="text"] {
+            text-align: center;
+        }
