@@ -40,8 +40,7 @@ app.get("/", function (req, res) {
 });
 
 // post response on "/"
-app.post("/", function (req, res) {
-    console.log(req.body)
+app.post("/", function (req, res) {    
     // assigning item = request body new item
     let item = req.body.newItem;
     // checking from which list the posting is coming
