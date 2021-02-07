@@ -60,6 +60,9 @@ Example of installing:
 After installing some npm module, npm creates "node_modules" folder with the imported
 code and modify .json file to show dependencies
 
+Installing all dependencies
+    > npm install
+
 Other way to run node is to install/use nodemon
     Nodemon is a node utility that monitor for changes in your source code  
     and restart the application automatically
