@@ -25,21 +25,20 @@ app.use(express.static("public"));
 app.get("/", function (req, res) {
   res.render("home", {
     homeStartingContent_ejs: homeStartingContent,
-    postTitle_ejs: posts,
-    postText_ejs: posts
-  })
+    posts_ejs: posts
+  });
 });
 
 app.get("/about", function (req, res) {
   res.render("about", {
     aboutContent_ejs: aboutContent
-  })
+  });
 });
 
 app.get("/contact", function (req, res) {
   res.render("contact", {
     contactContent_ejs: contactContent
-  })
+  });
 });
 
 app.get("/compose", function (req, res) {
@@ -52,10 +51,8 @@ app.post("/compose", function (req, res) {
     text: req.body.postText
   };
   posts.push(post);
-  console.log(posts);
   res.redirect("/compose");
 });
-
 
 app.listen(3000, function () {
   console.log("Server started on port 3000");
