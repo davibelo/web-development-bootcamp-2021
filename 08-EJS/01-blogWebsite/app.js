@@ -14,7 +14,7 @@ const app = express();
 // array of objects
 const posts = [{title: "1", text: "111"}];
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-app.get('/', function (req, res) {
+app.get("/", function (req, res) {
   res.render("home", {
     homeStartingContent_ejs: homeStartingContent,
     postTitle_ejs: posts,
@@ -30,30 +30,30 @@ app.get('/', function (req, res) {
   })
 });
 
-app.get('/about', function (req, res) {
+app.get("/about", function (req, res) {
   res.render("about", {
     aboutContent_ejs: aboutContent
   })
 });
 
-app.get('/contact', function (req, res) {
+app.get("/contact", function (req, res) {
   res.render("contact", {
     contactContent_ejs: contactContent
   })
 });
 
-app.get('/compose', function (req, res) {
+app.get("/compose", function (req, res) {
   res.render("compose")
 });
 
-app.post('/compose', function (req, res) {
+app.post("/compose", function (req, res) {
   const post = {
     title: req.body.postTitle,
     text: req.body.postText
   };
   posts.push(post);
   console.log(posts);
-  res.redirect('/compose');
+  res.redirect("/compose");
 });
 
 
