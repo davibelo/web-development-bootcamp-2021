@@ -2,11 +2,10 @@
 
 <h1>Home</h1>
 <p><%= homeStartingContent_ejs %> </p>
+
 <% for(let i = 0; i < posts_ejs.length; i++ ) { %>
-    <div class="container">
-        <h1><%= posts_ejs[i].title %></h1>
-        <p><%= posts_ejs[i].text %></p>
-    </div> 
+<h1><%= posts_ejs[i].title %></h1>
+<p><%= posts_ejs[i].text %></p>
 <% } %>
 
 <%- include('partials/footer.ejs'); -%>
