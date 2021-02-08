@@ -12,7 +12,7 @@ const app = express();
 
 // global variable to store posts
 // array of objects
-const posts = [{title: "1", text: "111"}];
+const posts = []
 
 app.set("view engine", "ejs");
 
