@@ -41,6 +41,10 @@ app.get("/contact", function (req, res) {
   });
 });
 
+app.get("/posts/:postName", function(req, res){
+  console.log(req.params.postName);
+});
+
 app.get("/compose", function (req, res) {
   res.render("compose")
 });

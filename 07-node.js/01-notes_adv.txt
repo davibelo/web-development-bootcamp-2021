@@ -12,30 +12,30 @@ API endpoint
     the software program that is requesting the service.
     For example: An URL of a web service 
 
-API Paths
-    API paths and operations are defined in the global paths section 
+API Paths Parameters
+    API paths parametersare defined in the global paths section 
     of the API specification. All paths are relative to the API server URL. 
-    The full request URL is constructed as <server-url>/path
+    The full request URL is constructed as <server-url>/path parameter
     
-    Paths are used to get different services or information from 
+    Paths parameters are used to get different services or information from 
     the respectively API
 
     Example:
         Joke API
-            Endpoint: https://v2.jokeapi.dev/
+            Endpoint: https://v2.jokeapi.dev/joke
             Paths: Programming, Dark
             URL: https://v2.jokeapi.dev/joke/Programming,Dark
                 A get request on the result URL will get a joke in 
                 Programming or Dark category
 
-API Parameters
-    Parameters are options you can pass with the endpoint 
+API Query Parameters
+    Query Parameters are options you can pass with the endpoint 
     (such as specifying the response format or the amount returned) 
     to influence the response
 
     Example:
         Joke API
-            Endpoint: https://v2.jokeapi.dev/
+            Endpoint: https://v2.jokeapi.dev/joke
             Paths: Dark and Pun
             Parameter: format=txt and blacklistFlags=racist
                 URL: https://v2.jokeapi.dev/joke/Dark,Pun?blacklistFlags=racist&format=txt

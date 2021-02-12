@@ -29,6 +29,11 @@ https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
     Client errors (400–499)
     Server errors (500–599)    
 
+Express Routing
+    See documentation below to see how express manages http routes
+    https://expressjs.com/en/guide/routing.html
+
+
 
 
 
