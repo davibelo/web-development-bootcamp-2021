@@ -50,8 +50,7 @@ let postText = "";
     const requestedTitle = _.lowerCase(req.params.postName);
     const savedPostTitle = _.lowerCase(posts[i].title);    
     if (savedPostTitle === requestedTitle) {
-      console.log("Match found");
-      postTitle = requestedTitle;
+      postTitle = posts[i].title;
       postText = posts[i].text;
     } else {
       console.log("Match not found");
