@@ -24,13 +24,9 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-  const postsTruncated = posts;
-  for (let i = 0; i < posts.length; i++) {
-    postsTruncated[i].text = posts[i].text.substring(0,300);    
-  }
   res.render("home", {
     homeStartingContent_ejs: homeStartingContent,
-    postsTruncated_ejs: postsTruncated
+    posts_ejs: posts
   });
 });
 
@@ -60,7 +56,6 @@ let postText = "";
       console.log("Match not found");
     }
   }
-
   res.render("post",{
     postTitle_ejs: postTitle,
     postText_ejs: postText
