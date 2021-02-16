@@ -60,7 +60,6 @@ let postText = "";
     postTitle_ejs: postTitle,
     postText_ejs: postText
   });
-
 });
 
 app.get("/compose", function (req, res) {

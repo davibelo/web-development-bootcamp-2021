@@ -6,6 +6,7 @@
 <% for(let i = 0; i < posts_ejs.length; i++ ) { %>
 <h1><%= posts_ejs[i].title %></h1>
 <p><%= posts_ejs[i].text.substring(0,300) %>...</p>
+<a href="/posts/:<%= posts_ejs[i].title %> ">Read More</a>
 <% } %>
 
 <%- include('partials/footer.ejs'); -%>
