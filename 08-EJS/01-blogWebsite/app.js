@@ -13,7 +13,7 @@ const app = express();
 
 // global variable to store posts
 // array of objects
-const posts = []
+const posts = [];
 
 app.set("view engine", "ejs");
 
@@ -24,9 +24,13 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
+  const postsTruncated = posts;
+  for (let i = 0; i < posts.length; i++) {
+    postsTruncated[i].text = posts[i].text.substring(0,300);    
+  }
   res.render("home", {
     homeStartingContent_ejs: homeStartingContent,
-    posts_ejs: posts
+    postsTruncated_ejs: postsTruncated
   });
 });
 
