@@ -1,0 +1,54 @@
+SQL databases
+    SQL = Structured Query Language. 
+        SQL is used to communicate with a database. 
+        According to ANSI (American National Standards Institute), 
+        it is the standard language for relational database 
+        management systems.
+    SQL databases are good for:
+        - data that you know well and can know all columns 
+            that will be implemented since beginning 
+        - data you want to build relationships
+            example of 3 SQL tables:
+                Customers (Customer ID, First Name, Last Name, Address)
+                Products (Product ID, Name, Price)
+                Orders (Order ID, Customer ID, Product ID, Quantity)
+
+                It is possible to build relationships on columns between tables
+    SQL databases scalability
+        It can't be distributed, to escalate it is need to increase your server 
+        capabilities
+                   
+
+NoSQL
+    NoSQL = Not only SQL
+    
+    A NoSQL database provides a mechanism for storage and retrieval of data 
+    that is modeled in means OTHER than the tabular relations used in relational 
+    databases.
+
+    Not so fast as SQL databases, but useful in some situations that you don't have
+    too much relationships between tables.
+
+    NoSQL databases are easier to escalate (better scalability) because it allows to 
+    distribute your data between various servers!
+
+Databases scalability building analogy 
+    Big SQL database = Very tall building
+    Big NoSQL database = Various small buildings distributed through neighborhoods
+
+Final differences SQL x NoSQL
+    SQL = 
+        mature (no new modifications on technology)
+        table structure
+        require a schema (name of tables, columns...)
+        great with relationships (faster queries)
+        scales vertically (big server)
+
+    NoSQL = 
+        new (it is possible receive upgrades)
+        document structure
+        more flexible to changes
+        not great with relationships
+        scales horizontally (more small distributed servers)
+
+
