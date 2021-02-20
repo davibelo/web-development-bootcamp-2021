@@ -4,6 +4,22 @@ SQL documentation
 Site to train SQL and other DBs
     https://sqliteonline.com/
 
+A relational database model is one of the most used data 
+models to store and process the data. 
+
+Tables are the essential elements of a database. 
+
+In this context, tables are the database objects that hold 
+the data in the relational databases. 
+
+A database contains one or more tables and these tables 
+can be modeled as relational. 
+The tables come into existence from the columns and every 
+column must have a name and a data type. 
+
+These columns store data according to the defined data types 
+and these data records are called rows.
+
 Examples of SQL code:
 
 - Creating a table:

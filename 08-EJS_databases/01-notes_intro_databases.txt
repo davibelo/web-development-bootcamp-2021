@@ -1,3 +1,22 @@
+Databases
+    A database is an organized collection of data, 
+    generally stored and accessed electronically 
+    from a computer system
+
+CRUD
+    In computer programming, 
+    create, read, update, and delete[1] (CRUD) 
+    are the four basic functions of persistent storage
+
+CRUD concept can be used on various situations, but
+most common is in databases
+
+CRUD	SQL	    HTTP	DDS
+create	INSERT	PUT	    write
+read	SELECT	GET	    read
+update	UPDATE	PUT	    write
+delete	DELETE	DELETE	dispose
+
 SQL databases
     SQL = Structured Query Language. 
         SQL is used to communicate with a database. 
