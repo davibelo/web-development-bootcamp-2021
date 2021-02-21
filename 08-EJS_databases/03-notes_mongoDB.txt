@@ -103,6 +103,9 @@ MongoDB on node.js
 
     2. ODM (mongoose module)
         ODM is a object document mapper
+        Allows javascript code to "talk" to mongoDB databases
+
         
+
     
 
