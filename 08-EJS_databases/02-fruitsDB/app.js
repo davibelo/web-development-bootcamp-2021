@@ -7,12 +7,8 @@ mongoose.connect('mongodb://localhost:27017/fruitsDB', {
     useUnifiedTopology: true
 });
 
-// mongoose model creation
-// first parameter is collection name
-// second parameter is a js object with collection schema
-// mongoose create a collection with model name but lowered case and plural
-// example: model name = Fruit => collection = fruits
-const Fruit = mongoose.model('Fruit', {
+// Creating a document schema
+const fruitSchema = new mongoose.Schema({
     // you can include data validation
     name: {
         type: String,
@@ -27,54 +23,58 @@ const Fruit = mongoose.model('Fruit', {
     review: String
 });
 
+// Creating a mongoose model
+// It is used to manipulate mongo databases
+// first parameter is collection name
+// second parameter is the collection schema
+// mongoose create a collection with model name but lowered case and plural
+// example: model name = Fruit => collection = fruits
+const Fruit = mongoose.model('Fruit', fruitSchema);
+
 // Creating data
 
-// const banana = new Fruit({
-//     name: 'banana',
-//     score: 10,
-//     review: 'perfect'
-// });
-// banana.save();
+const banana = new Fruit({
+    name: 'banana',
+    score: 10,
+    review: 'perfect'
+});
 
-// const kiwi = new Fruit({
-//     name: 'kiwi',
-//     score: 9,
-//     review: 'delicious but small'
-// });
-// kiwi.save();
 
-// const apple = new Fruit({
-//     name: 'apple',
-//     score: 8,
-//     review: 'not bad'
-// });
-// apple.save();
+const kiwi = new Fruit({
+    name: 'kiwi',
+    score: 9,
+    review: 'delicious but small'
+});
 
-// const onion = new Fruit({
-//     name: 'onion',
-//     score: 1,
-//     review: 'not fruit'
-// });
-// onion.save();
+const apple = new Fruit({
+    name: 'apple',
+    score: 8,
+    review: 'not bad'
+});
 
 // validation test 1
-// const garlic = new Fruit({
-//     score: 5,
-//     review: 'validation test'
-// });
-// garlic.save();
+const peach = new Fruit({
+    score: 5,
+    review: 'validation test'
+});
 
 // validation test 2
-// const garlic = new Fruit({
-//     name: 'garlic',
-//     score: 34,
-//     review: 'validation test'
-// });
-// garlic.save();
+const pineapple = new Fruit({
+    name: 'pineapple',
+    score: 34,
+    review: 'validation test'
+});
+
+// Saving on database
+// banana.save();
+// kiwi.save();
+// apple.save();
+// peach.save();
+// pineapple.save();
 
 // Other way to save documents on database
 // OR
-// Fruit.insertMany([banana, kiwi],function(err){
+// Fruit.insertMany([banana, kiwi, apple, peach, pineapple],function(err){
 //     if (err) {
 //         console.log(err);
 //     }else {
@@ -91,7 +91,6 @@ Fruit.find(function (err, fruits) {
     } else {
         console.log(fruits);
     }
-
     // loops to access fruits collection and log only names
     // for (let index = 0; index < fruits.length; index++) {
     //     console.log(fruits[index].name);        
@@ -99,7 +98,6 @@ Fruit.find(function (err, fruits) {
     fruits.forEach(function (item) {
         console.log('name:' + item.name + ' score:' + item.score);
     });
-    mongoose.connection.close()
 });
 
 // Updating data
@@ -133,4 +131,32 @@ Fruit.find(function (err, fruits) {
 //     }
 // );
 
+// Building relationships with embedded documents
 
+// Creating a person schema
+// It have a field that is a embedded database schema
+const personSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    favoriteFruit: fruitSchema
+});
+
+// Creating a person model
+const Person = mongoose.model('Person', personSchema);
+
+// Creating a document with embedded relationship
+const John = new Person({
+    name: 'John',
+    age: 37,
+    favoriteFruit: apple
+});
+// John.save();
+
+Person.find(function (err, people) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(people);
+    }
+    mongoose.connection.close();
+});
