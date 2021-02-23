@@ -39,7 +39,6 @@ const banana = new Fruit({
     review: 'perfect'
 });
 
-
 const kiwi = new Fruit({
     name: 'kiwi',
     score: 9,
@@ -85,7 +84,7 @@ const pineapple = new Fruit({
 // Reading data
 
 // second argument of the callback function is a js object with query result
-Fruit.find(function (err, fruits) {
+Fruit.find({}, function (err, fruits) {
     if (err) {
         console.log(err);
     } else {
@@ -152,7 +151,7 @@ const John = new Person({
 });
 // John.save();
 
-Person.find(function (err, people) {
+Person.find({}, function (err, people) {
     if (err) {
         console.log(err);
     } else {
