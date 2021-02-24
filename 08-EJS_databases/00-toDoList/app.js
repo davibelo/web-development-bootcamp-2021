@@ -41,6 +41,19 @@ const item3 = new Item({
 });
 const defaultItems = [item1, item2, item3];
 
+// to allow dynamic creation of custom lists
+// it will be created lists collection
+// with ebbeded items collections
+
+// creating a custom list Schema
+const listsSchema = new mongoose.Schema({
+    name: String,
+    items: [itemsSchema]
+});
+
+// creating a List Model
+const List = mongoose.model("List", listsSchema);
+
 // setting express app to use ejs as view engine
 app.set("view engine", "ejs");
 
@@ -55,10 +68,16 @@ app.use(express.static("public"));
 app.get("/", function (req, res) {
 
     // using date.js module
+    // not relevant on below code, just example of
+    // using external module
     day = date.getDate();
+    console.log(day);
     // day = date.getWeekday();
-
-    // reading items database
+    
+    // naming main list
+    const listName = "Today";
+    
+    // reading all items database
     Item.find({}, function (err, foundItems) {
         if (err) {
             console.log(err);
@@ -79,22 +98,70 @@ app.get("/", function (req, res) {
             // rendering html template on list.ejs, substituting
             // variables as shown below on js object argument
             res.render("list", {
-                listTitle: day,
+                listTitle: listName,
                 newListItems: foundItems
             });
         }
     });
 });
 
+app.get("/:customListName", function (req, res) {
+    const customListName = req.params.customListName;
+
+    List.findOne({
+        name: customListName
+    }, function (err, foundList) {
+        if (err) {
+            console.log(err);
+        } else {
+            // if foundList doesn't exists
+            if (!foundList) {
+                // create a new list
+                const list = new List({
+                    name: customListName,
+                    items: defaultItems
+                });
+                list.save();
+                res.redirect("/" + customListName);
+            } else {
+                // show an existing list
+                console.log(foundList);
+                res.render("list", {
+                    listTitle: foundList.name,
+                    newListItems: foundList.items
+                });
+            }
+        }
+    });
+});
+
 // post response on "/"
 app.post("/", function (req, res) {
-    // assigning item = request body new item
+
+    // assigning itemName = request body new item
     const itemName = req.body.newItem;
+    // assigning listName = request body list from submit button
+    const listName = req.body.list;
+    // creating new item document
     const item = new Item({
         name: itemName
     });
-    item.save();
-    res.redirect("/");
+
+    // test if user is on main list    
+    if (listName === "Today") {
+        item.save();
+        res.redirect("/");
+    // if user is on a custom list
+    } else {
+        // find the list in database and saving new item
+        List.findOne({
+            name: listName
+        }, function (err, foundList) {
+            foundList.items.push(item);
+            foundList.save();
+            res.redirect("/" + listName);
+        });
+    }
 });
 
 // post response on "/delete"
