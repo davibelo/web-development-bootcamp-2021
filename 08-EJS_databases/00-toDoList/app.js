@@ -73,34 +73,33 @@ app.get("/", function (req, res) {
     day = date.getDate();
     console.log(day);
     // day = date.getWeekday();
-    
+
     // naming main list
     const listName = "Today";
-    
+
     // reading all items database
     Item.find({}, function (err, foundItems) {
         if (err) {
             console.log(err);
         } else {
-            console.log("Successful query on database");
-        }
-        // inserting default items on database if it is empty
-        if (foundItems.length === 0) {
-            Item.insertMany(defaultItems, function (err) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log('Successful saved default items on database');
-                }
-            });
-            res.redirect("/");
-        } else {
-            // rendering html template on list.ejs, substituting
-            // variables as shown below on js object argument
-            res.render("list", {
-                listTitle: listName,
-                newListItems: foundItems
-            });
+            // inserting default items on database if it is empty
+            if (foundItems.length === 0) {
+                Item.insertMany(defaultItems, function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('Successful saved default items on database');
+                    }
+                });
+                res.redirect("/");
+            } else {
+                // rendering html template on list.ejs, substituting
+                // variables as shown below on js object argument
+                res.render("list", {
+                    listTitle: listName,
+                    newListItems: foundItems
+                });
+            }
         }
     });
 });
@@ -151,7 +150,7 @@ app.post("/", function (req, res) {
     if (listName === "Today") {
         item.save();
         res.redirect("/");
-    // if user is on a custom list
+        // if user is on a custom list
     } else {
         // find the list in database and saving new item
         List.findOne({
@@ -167,17 +166,45 @@ app.post("/", function (req, res) {
 // post response on "/delete"
 app.post("/delete", function (req, res) {
     const checkedItemId = req.body.checkbox;
-    console.log(checkedItemId);
-    Item.deleteOne({
-        _id: checkedItemId
-    }, function (err) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log('Successful deleted checked item');
-        }
-    });
-    res.redirect("/");
+    const listName = req.body.listName;
+
+    // checking if the main list
+    if (listName === "Today") {
+        console.log(checkedItemId);
+        Item.deleteOne({
+            _id: checkedItemId
+        }, function (err) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('Successful deleted checked item');
+            }
+        });
+        res.redirect("/");
+    } else {
+        // if it is a custom list
+        List.findOneAndUpdate({
+                // querying list name
+                name: listName
+            }, {
+                // using mongo db $pull operator
+                $pull: {
+                    // name of the array inside the list
+                    items: {
+                        // condition to find item to pull from array
+                        _id: checkedItemId
+                    }
+                }
+            },
+            function (err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log('Successful deleted checked item');
+                    res.redirect("/" + listName);
+                }
+            });
+    }
 });
 
 app.get("/about", function (req, res) {
