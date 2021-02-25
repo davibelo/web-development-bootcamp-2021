@@ -5,6 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const _ = require("lodash");
 
 // personal module date.js
 const date = require(__dirname + "/date.js");
@@ -105,7 +106,8 @@ app.get("/", function (req, res) {
 });
 
 app.get("/:customListName", function (req, res) {
-    const customListName = req.params.customListName;
+    // using lodash to capitalize custom list name
+    const customListName = _.capitalize(req.params.customListName);
 
     List.findOne({
         name: customListName
