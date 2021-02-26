@@ -18,9 +18,10 @@ const app = express();
 const keyData = fs.readFileSync("key.txt", "utf8");
 const DBPassword = keyData.toString();
 const DBUser = "admin-davibelo";
+const DBName = "todolistDB";
 
 // connecting to mongodb database server
-const DBUrl = "mongodb+srv://" + DBUser + ":" + DBPassword + "@cluster0.dorcf.mongodb.net/todolistDB?retryWrites=true&w=majority";
+const DBUrl = "mongodb+srv://" + DBUser + ":" + DBPassword + "@cluster0.dorcf.mongodb.net/" + DBName + "?retryWrites=true&w=majority";
 mongoose.connect(DBUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
