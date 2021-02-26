@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const fs = require("fs");
 
 // personal module date.js
 const date = require(__dirname + "/date.js");
@@ -13,8 +14,14 @@ const date = require(__dirname + "/date.js");
 // creating an express app
 const app = express();
 
-// connecting to local mongodb database
-mongoose.connect("mongodb://localhost:27017/todolistDB", {
+// reading password from key file
+const keyData = fs.readFileSync("key.txt", "utf8");
+const DBPassword = keyData.toString();
+const DBUser = "admin-davibelo";
+
+// connecting to mongodb database server
+const DBUrl = "mongodb+srv://" + DBUser + ":" + DBPassword + "@cluster0.dorcf.mongodb.net/todolistDB?retryWrites=true&w=majority";
+mongoose.connect(DBUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

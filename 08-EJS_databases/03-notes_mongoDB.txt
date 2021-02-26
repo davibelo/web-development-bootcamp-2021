@@ -39,7 +39,7 @@ See mongo shell help
     (on mongo shell)
     > help
 
-Create new db
+Create new db (or switch to it after created)
     (on mongo shell)
     > use <new name>
 
@@ -105,7 +105,15 @@ MongoDB on node.js
         ODM is a object document mapper
         Allows javascript code to "talk" to mongoDB databases
 
-        
+MongoDB on cloud
+    Mongo DB Atlas is a mongo DB cloud service
+    https://cloud.mongodb.com/
+
+    Create a cluster
+    Create a user
+    Add network access 
+    Create databases and collections
+    ...
 
     
 
