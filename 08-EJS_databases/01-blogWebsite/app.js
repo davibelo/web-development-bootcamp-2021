@@ -76,13 +76,13 @@ app.get("/contact", function (req, res) {
   });
 });
 
-app.get("/posts/:postName", function (req, res) {
-  // saving requested title from post request
-  const requestedTitle = req.params.postName;
+app.get("/posts/:postId", function (req, res) {
+  // saving postID route parameter
+  const requestedPostId = req.params.postId;
   
   // finding post  
   Post.findOne({
-    title: requestedTitle
+    _id: requestedPostId
   }, function (err, foundPost) {
     if (err) {
       console.log(err);

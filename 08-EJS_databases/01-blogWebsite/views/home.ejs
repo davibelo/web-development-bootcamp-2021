@@ -4,9 +4,9 @@
 <p><%= homeStartingContent_ejs %> </p>
 
 <% for(let i = 0; i < posts_ejs.length; i++ ) { %>
-<h1><%= posts_ejs[i].title %></h1>
-<p><%= posts_ejs[i].text.substring(0,300) %>...
-<a href="/posts/<%= posts_ejs[i].title %> ">Read More</a>
+<h1><%=posts_ejs[i].title%></h1>
+<p><%=posts_ejs[i].text.substring(0,300)%>...
+<a href="/posts/<%=posts_ejs[i]._id%> ">Read More</a>
 </p>
 <% } %>
 
