@@ -17,8 +17,10 @@ const app = express();
 // reading password from key file
 const keyData = fs.readFileSync("key.txt", "utf8");
 const DBPassword = keyData.toString();
+
+// mongodb database server login information
 const DBUser = "admin-davibelo";
-const DBName = "todolistDB";
+const DBName = "blogDB";
 
 // connecting to mongodb database server
 const DBUrl = "mongodb+srv://" + DBUser + ":" + DBPassword + "@cluster0.dorcf.mongodb.net/" + DBName + "?retryWrites=true&w=majority";
