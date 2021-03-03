@@ -5,6 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const encrypt = require("mongoose-encryption");
 
 // creating express app
 const app = express();
@@ -39,9 +40,15 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     password: {
-        type: String,
-        required: true
+        type: String
     }
+});
+
+// defining encryption key and encrypted fields
+const key = "ThisisOurLittleSecret";
+userSchema.plugin(encrypt, {
+    secret: key,
+    encryptedFields: ['password']
 });
 
 // creating user model ("collection manipulator")
@@ -86,7 +93,7 @@ app.route("/register")
                 res.send(err);
             } else {
                 res.render("secrets");
-                res.send("New user successful created");
+                console.log("New user successful created");
             }
         });
     });

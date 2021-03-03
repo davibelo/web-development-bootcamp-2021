@@ -13,3 +13,22 @@ Level 3 - Hashing with md5
 Level 4 - Hashing and Salting with bcrypt
 Level 5 - Cookies and Sessions
 Level 6 - Google OAuth 2.0 Authentication
+
+
+Encryption
+    Site to test encryption
+    https://cryptii.com/
+
+For all encryption you have:
+    the message
+    the method
+    the key
+
+Mongoose-encryption
+    Is a node.js mongoose package that can be used 
+    for encryption
+
+    This package automatically:
+        encrypts when app saves the document
+        decrypts when app find the document
+
