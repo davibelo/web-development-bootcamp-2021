@@ -14,6 +14,21 @@ const date = require(__dirname + "/date.js");
 // creating an express app
 const app = express();
 
+// setting express app to use ejs as view engine
+app.set("view engine", "ejs");
+
+// using bodyParser to read body responses
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+// serving the public folder to client
+app.use(express.static("public"));
+
+// starting server on port 3000 or process.env.PORT
+app.listen(process.env.PORT || 3000, function () {
+    console.log("----- Starting server on port 3000 [OK] -----");
+});
+
 // reading password from key file
 const keyData = fs.readFileSync("key.txt", "utf8");
 const DBPassword = keyData.toString();
@@ -64,16 +79,6 @@ const listsSchema = new mongoose.Schema({
 
 // creating a List Model
 const List = mongoose.model("List", listsSchema);
-
-// setting express app to use ejs as view engine
-app.set("view engine", "ejs");
-
-// using bodyParser to read body responses
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-// serving the public folder to client
-app.use(express.static("public"));
 
 // get response on "/"
 app.get("/", function (req, res) {
@@ -223,6 +228,3 @@ app.get("/about", function (req, res) {
     res.render("about", {});
 });
 
-app.listen(process.env.PORT || 3000, function () {
-    console.log("----- Starting server on port 3000 [OK] -----");
-});
