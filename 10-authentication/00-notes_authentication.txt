@@ -1,0 +1,12 @@
+Authentication and security
+
+Why authenticate?
+    1. Associate data with an user
+    2. Restrict access of data
+
+How secure is your service?
+    You can have at least 6 level of security
+
+Level 1 - Login and password authentication
+
+
