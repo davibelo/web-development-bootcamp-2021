@@ -3,3 +3,6 @@
 
 # apiKey
 **/key.txt
+
+# dotenv variables
+**/.env

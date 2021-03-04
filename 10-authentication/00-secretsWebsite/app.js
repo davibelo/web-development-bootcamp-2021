@@ -1,5 +1,8 @@
 //jshint esversion:6
 
+// importing dotenv package as said in documentation
+require("dotenv").config();
+
 // importing external node modules
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -45,7 +48,7 @@ const userSchema = new mongoose.Schema({
 });
 
 // defining encryption key and encrypted fields
-const key = "ThisisOurLittleSecret";
+const key = process.env.KEY;
 userSchema.plugin(encrypt, {
     secret: key,
     encryptedFields: ['password']

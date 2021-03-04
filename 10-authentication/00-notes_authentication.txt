@@ -25,10 +25,14 @@ For all encryption you have:
     the key
 
 Mongoose-encryption
-    Is a node.js mongoose package that can be used 
+    It is a node.js module that can be used as mongoose plugin
     for encryption
 
     This package automatically:
         encrypts when app saves the document
         decrypts when app find the document
+
+dotenv
+    It is a node.js module that allows to read environment variables
+    This is useful to store encryption keys
 
