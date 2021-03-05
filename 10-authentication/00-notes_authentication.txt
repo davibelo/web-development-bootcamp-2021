@@ -35,4 +35,20 @@ Mongoose-encryption
 dotenv
     It is a node.js module that allows to read environment variables
     This is useful to store encryption keys
+    
+    OBS: 
+    On Heroku platform you can set this env variables to be able
+    to use in your project without need to have env information 
+    on repository
+
+Hashing 
+    Hashing works appling a function to the content that
+    you want to secure.
+             hash function
+    password ------------> hash
+
+    It is impossible to calculate the password even having the 
+    result hash and hash method
+
+    
 
