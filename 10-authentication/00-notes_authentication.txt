@@ -50,5 +50,48 @@ Hashing
     It is impossible to calculate the password even having the 
     result hash and hash method
 
-    
+    The problem of the hash is because people sometimes 
+    uses "easy" passwords. So the hacker can have a table
+    of "easy" passwords hashes and compare with it.
 
+Hacking 101
+    List of most common passwords by year
+    https://en.wikipedia.org/wiki/List_of_the_most_common_passwords
+    
+    List of most common passwords hashes
+    https://www.passwordrandom.com/most-popular-passwords
+
+    You can simply google the hash if it is from a common
+    password results will appear
+
+    Check the time necessary for your password to be hacked
+    http://password-checker.online-domain-tools.com/
+
+Salting
+    Adding random characters to the password before hash it.    
+
+                     salt        hash function         
+    password + random characters ------------> hash +  random characters 
+
+    More rounds of salting can be used.
+
+            2nd round salting  hash function 
+    hash +  random characters  ------------> final hash
+
+Better hashing function
+    bcrypt is package that have a better hashing function than MD5
+    
+    Attention to the node version compatibility
+        https://www.npmjs.com/package/bcrypt
+    
+    Use node.js LTS version
+    If you version is not compatible, use nvm to change it
+    https://github.com/nvm-sh/nvm/blob/master/README.md
+
+    Even with this, If you have warning when installing 
+    bcrypt, try to reinstall the slightly older version
+    > npm i bcrypt@5.0.0
+
+    
+    
+    

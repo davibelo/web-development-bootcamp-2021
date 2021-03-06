@@ -8,7 +8,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const md5 = require("md5");
+const bcrypt = require("bcrypt");
+
+// setting up bcrypt
+const saltRounds = 10;
 
 // creating express app
 const app = express();
@@ -56,8 +59,10 @@ app.route("/login")
         res.render("login");
     })
     .post(function (req, res) {
+
+
         const username = req.body.username;
-        const password = md5(req.body.password);
+        const password = req.body.password;
 
         User.findOne({
             email: username
@@ -65,10 +70,16 @@ app.route("/login")
             if (err) {
                 console.log(err);
             } else {
-                if (foundUser.password === password) {
-                    res.render("secrets");
-                } else {
-                    res.send("Login failed");
+                const passLogin = req.body.password;
+                const passDB = foundUser.password;
+                if (foundUser) {
+                    bcrypt.compare(passLogin, passDB, function (err, result) {
+                        if (result === true) {
+                            res.render("secrets");
+                        } else {
+                            res.send("Login failed");
+                        }
+                    });
                 }
             }
         });
@@ -80,16 +91,22 @@ app.route("/register")
         res.render("register");
     })
     .post(function (req, res) {
-        const newUser = new User({
-            email: req.body.username,
-            password: md5(req.body.password)
-        });
-        newUser.save(function (err) {
+        bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
             if (err) {
-                res.send(err);
+                console.log(err);
             } else {
-                res.render("secrets");
-                console.log("New user successful created");
+                const newUser = new User({
+                    email: req.body.username,
+                    password: hash
+                });
+                newUser.save(function (err) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        res.render("secrets");
+                        console.log("New user successful created");
+                    }
+                });
             }
         });
     });

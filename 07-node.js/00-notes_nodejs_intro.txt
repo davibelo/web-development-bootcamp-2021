@@ -41,6 +41,9 @@ To manipulate external modules use npm
     npm = node package manager
     npm is installed with node.js
 
+OBS: to use previous versions of node.js, you can use nvm:
+    https://github.com/nvm-sh/nvm/blob/master/README.md
+
 To view all modules and documentation produced for node.js browse:
     https://www.npmjs.com/
     OBS: The documentation includes how to install and use those packages
