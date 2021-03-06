@@ -92,6 +92,37 @@ Better hashing function
     bcrypt, try to reinstall the slightly older version
     > npm i bcrypt@5.0.0
 
+Cookies
+    Cookies are information saved in the client browser
+    Its contain session information.
     
+    This allows the website to know what have you done 
+    previously there, for example: 
+        added a item on a cart on amazon.com
+    
+    Those information can be used in the website itself
+    or other websites, for example:
+        facebook website will know which item was in 
+        your amazon cart
+
+passport.js
+    It is a node package used to manage Sessions
+
+Making an app with session control
+    Packages:
+        "express-session"
+        "passport"
+        "passport-local"
+        "passport-local-mongoose"
+    Documentation
+        https://www.npmjs.com/package/express-session
+        http://www.passportjs.org/
+        http://www.passportjs.org/packages/passport-local/
+        https://www.npmjs.com/package/passport-local-mongoose
+
+
+
+
+
     
     
