@@ -1,0 +1,15 @@
+React.js
+    A javascript library for building user interfaces
+    It is a frontend library
+    
+    React.js permits creating of components
+    Components can be used as "custom" html elements
+    making cleaner and reduced html code
+    
+    (Bootstrap for example, uses common html elements
+    so the html is much more complex and dense)
+
+    Each component has a combined html, css and js
+    meaning embedded markup, style and functionality
+
+
