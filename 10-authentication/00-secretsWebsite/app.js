@@ -11,29 +11,23 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const findOrCreate = require("mongoose-findorcreate");
 
 // creating express app
 const app = express();
-
+// serving the public folder to client
+app.use(express.static("public"));
 // setting express app to use ejs as view engine
 app.set("view engine", "ejs");
-
 // using bodyParser to read body responses
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// serving the public folder to client
-app.use(express.static("public"));
-
-// starting server on port 3000
-app.listen(3000, function () {
-    console.log("----- Starting server on port 3000 [OK] -----");
-});
-
 // setting app to use session
 app.use(session({
-    secret: process.env.KEY,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false
 }));
@@ -42,9 +36,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// setting mongoose
-mongoose.set("useCreateIndex", true);
-
 // creating mongo db connection
 const DBUrl = "mongodb://localhost:27017/userDB";
 mongoose.connect(DBUrl, {
@@ -52,19 +43,22 @@ mongoose.connect(DBUrl, {
     useUnifiedTopology: true
 });
 
+// setting mongoose
+mongoose.set("useCreateIndex", true);
+
 // creating user schema
 const userSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String
-    }
+    username: String,
+    password: String
+    //googleId: String
+    //secret: String
 });
 
 // setting passport as a mongoose plugin
 userSchema.plugin(passportLocalMongoose);
+
+// setting findOrCreat as a mongoose plugin
+userSchema.plugin(findOrCreate);
 
 // creating user model ("collection manipulator")
 const User = new mongoose.model("User", userSchema);
@@ -73,6 +67,42 @@ const User = new mongoose.model("User", userSchema);
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+passport.use(new GoogleStrategy({
+        clientID: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL: "http://localhost:3000/auth/google/secrets"
+    },
+    function (accessToken, refreshToken, profile, cb) {
+        console.log(profile);
+        User.findOrCreate({
+            googleId: profile.id
+        }, function (err, user) {
+            return cb(err, user);
+        });
+    }
+));
+
+// home page
+app.route("/").get(function (req, res) {
+    res.render("home");
+});
+
+// google authentication rout
+app.get("/auth/google",
+    passport.authenticate("google", {
+        scope: ["profile"]
+    }));
+
+// google authentication callback route
+// app.get("/auth/google/secrets",
+//     passport.authenticate("google", {
+//         failureRedirect: "/login"
+//     }),
+//     function (req, res) {
+//         // Successful authentication, redirect home.
+//         res.redirect("/secrets");
+//     });
 
 // login page
 app.route("/login")
@@ -119,11 +149,6 @@ app.route("/register")
             });
     });
 
-// home page
-app.route("/").get(function (req, res) {
-    res.render("home");
-});
-
 // secrets page
 app.route("/secrets")
     .get(function (req, res) {
@@ -142,3 +167,8 @@ app.route("/logout")
         req.logout();
         res.redirect("/");
     });
+
+// starting server on port 3000
+app.listen(3000, function () {
+    console.log("----- Starting server on port 3000 [OK] -----");
+});

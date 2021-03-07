@@ -121,8 +121,40 @@ Making an app with session control
         https://www.npmjs.com/package/passport-local-mongoose
 
 
-
-
-
+Third Party Authentication
+    Use facebook, google, twitter to authenticate
     
+    Advantages: 
+        Use some third party information 
+        Delegate authentication responsibility 
+
+
+OAuth
+    Service that permits 3rd party authentication
+    Characteristics:    
+        1. Granular access levels
+        2. Read/Read + Write access options
+        3. Revoke access
+
+    Steps
+        1. Setup your app
+        2. Redirect to authenticate
+        3. User logs in on 3rd party
+        4. User grants permissions
+        5. Receive authorisation code from 3rd Party
+        6. (optional) Exchange AuthCode for Access Token
+    
+        Access Token permits your app access other 
+        information on 3rd party
+    
+    OAuth can be found as strategies on passport.js website
+        Those strategies are node.js packages
+        Example:
+            http://www.passportjs.org/packages/passport-google-oauth20/
+    
+
+
+
+
+
     
