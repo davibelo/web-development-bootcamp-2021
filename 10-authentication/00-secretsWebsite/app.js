@@ -50,8 +50,8 @@ mongoose.set("useCreateIndex", true);
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
-    googleId: String
-    //secret: String
+    googleId: String,
+    secret: String
 });
 
 // setting passport as a mongoose plugin
@@ -68,15 +68,15 @@ passport.use(User.createStrategy());
 
 // setting passport serialize methods to work
 // with all authentication strategies
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
     done(null, user.id);
-  });
-  
-  passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      done(err, user);
+});
+
+passport.deserializeUser(function (id, done) {
+    User.findById(id, function (err, user) {
+        done(err, user);
     });
-  });
+});
 
 passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
@@ -159,16 +159,52 @@ app.route("/register")
             });
     });
 
-// secrets page
-app.route("/secrets")
+// submit page
+app.route("/submit")
     .get(function (req, res) {
-        // if user already authenticated
-        // allows him to render the page
         if (req.isAuthenticated()) {
-            res.render("secrets");
+            res.render("submit");
         } else {
             res.redirect("/login");
         }
+    })
+    .post(function (req, res) {
+        const submittedSecret = req.body.secret;
+        // passport saves user info on req
+        console.log(req.user);
+        User.findById(req.user.id, function (err, foundUser) {
+            if (err) {
+                console.log(err);
+            } else {
+                if (foundUser) {
+                    foundUser.secret = submittedSecret;
+                    foundUser.save(function () {
+                        res.redirect("/secrets");
+                    });
+                }
+            }
+        });
+    });
+
+// secrets page
+app.route("/secrets")
+    .get(function (req, res) {
+        // finding all users with secret not equal to null 
+        User.find({
+            "secret": {
+                $ne: null
+            }
+        }, function (err, foundUsers) {
+            if (err) {
+                console.log(err);
+            } else {
+                if (foundUsers) {
+                    res.render("secrets", {
+                        usersWithSecrets: foundUsers
+                    });
+                }
+            }
+        });
     });
 
 // logout route
