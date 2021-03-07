@@ -128,7 +128,6 @@ Third Party Authentication
         Use some third party information 
         Delegate authentication responsibility 
 
-
 OAuth
     Service that permits 3rd party authentication
     Characteristics:    

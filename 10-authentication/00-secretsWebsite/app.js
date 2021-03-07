@@ -49,8 +49,8 @@ mongoose.set("useCreateIndex", true);
 // creating user schema
 const userSchema = new mongoose.Schema({
     username: String,
-    password: String
-    //googleId: String
+    password: String,
+    googleId: String
     //secret: String
 });
 
@@ -65,8 +65,18 @@ const User = new mongoose.model("User", userSchema);
 
 // setting passport to work with User model
 passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+
+// setting passport serialize methods to work
+// with all authentication strategies
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+  });
+  
+  passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+      done(err, user);
+    });
+  });
 
 passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
@@ -95,14 +105,14 @@ app.get("/auth/google",
     }));
 
 // google authentication callback route
-// app.get("/auth/google/secrets",
-//     passport.authenticate("google", {
-//         failureRedirect: "/login"
-//     }),
-//     function (req, res) {
-//         // Successful authentication, redirect home.
-//         res.redirect("/secrets");
-//     });
+app.get("/auth/google/secrets",
+    passport.authenticate("google", {
+        failureRedirect: "/login"
+    }),
+    function (req, res) {
+        // Successful authentication, redirect to secrets
+        res.redirect("/secrets");
+    });
 
 // login page
 app.route("/login")
