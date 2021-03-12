@@ -17,6 +17,48 @@ Code Sandbox
     online, being very similar to vscode.
     https://codesandbox.io/
 
+Introduction to React.js 
+https://codesandbox.io/s/react-00-introduction-to-jsx-cr7s8
 
+Javascript Expressions in JSX
+https://codesandbox.io/s/react-01-javascript-expressions-in-jsx-szcuu
+
+JSX attributes and styling
+https://codesandbox.io/s/react-02-jsx-attributes-and-styling-upxk5
+
+React Components
+https://codesandbox.io/s/react-03-components-tc54h
+
+React Import and Export
+https://codesandbox.io/s/react-04-es6-importexport-i0fme
+https://codesandbox.io/s/react-041-es6-importexport-practice-8ybc3
+
+Setup Local Environment
+    1. Check if node is on LTS version
+        > node --version
+        Compare with LTS on node.js website
+        if it is not, install LTS version
+    2. Install Visual Studio Code
+    3. Install some syntax highlighting extension for babel
+    4. Create a React App
+        See https://reactjs.org/docs/create-a-new-react-app.html
+        Execute create app command
+        > npx create-react-app "my-app name"
+        Execute ">npm start" command inside app folder
+    5. Delete unnecessary files
+        Inside public folder   
+            Delete all files except index.html
+        Inside src folder
+            Delete all files except index.js
+    6. Delete unnecessary code
+        Inside index.html
+            Delete everything except:
+                title inside <head>
+                <div id="root"></div> inside <body>
+            Insert script link to index.js in end of <body>
+                <script src="./src/index.js" type="text/jsx"></script>
+        Inside index.js
+            Delete everything except first 2 imports
+    
 
 

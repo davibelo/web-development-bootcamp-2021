@@ -30,6 +30,10 @@ After installing node.js, you can execute javascript files on terminal by typing
     > node <name of javascript file>
     ex: > node index.js
 
+Using previous versions of node
+    Use nvm tool to change versions of installed node.js
+    https://github.com/nvm-sh/nvm/blob/master/README.md
+
 You can also execute node in REPL (likE a prompt) mode by typing node on terminal
     REPL = Read, Evaluation, Print, Loop
     Type CTRL+C or .exit to exit
