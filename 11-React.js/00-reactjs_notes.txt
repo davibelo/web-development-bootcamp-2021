@@ -32,8 +32,8 @@ JSX
         ReactDOM.render(myelement, document.getElementById('root'));
 
 Babel
-    ReactDom uses babel to generate most common javascript code
-    from JSX statements.
+    ReactDom uses babel to convert js ES6 from JSX statements
+    to the most basic javascript code.
     It will permit your react app to run on older browsers.
     https://babeljs.io/
 
@@ -90,8 +90,7 @@ Setup Local Environment
     4. Create a React App
         See https://reactjs.org/docs/create-a-new-react-app.html
         Execute create app command
-        > npx create-react-app "my-app name"
-        Execute ">npm start" command inside app folder
+        > npx create-react-app "my-app name"        
     5. Delete unnecessary files
         Inside public folder   
             Delete all files except index.html
@@ -106,6 +105,8 @@ Setup Local Environment
                 <script src="./src/index.js" type="text/jsx"></script>
         Inside index.js
             Delete everything except first 2 imports
+    7. Run React App local server
+        Execute ">npm start" command inside app folder
     
 
 

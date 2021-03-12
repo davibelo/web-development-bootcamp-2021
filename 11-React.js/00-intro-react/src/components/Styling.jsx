@@ -1,3 +1,4 @@
+//jshint esversion:6
 import React from "react";
 
 const today = new Date();
@@ -30,7 +31,7 @@ function Styling() {
       <h1 className="heading">My Favourite Foods</h1>
       <ul>
         <li>Bacon</li>
-        <li>Jamon</li>
+        <li>Ham</li>
         <li>Noodles</li>
       </ul>
       <img
@@ -40,7 +41,7 @@ function Styling() {
       />
       <img
         className="food-img"
-        alt="jamon"
+        alt="ham"
         src="https://s.cornershopapp.com/product-images/2175214.png?versionId=v3clj.E_M_309IqBq6oajTqsT21OuT8V"
       />
       <img
