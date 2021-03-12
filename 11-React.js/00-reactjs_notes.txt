@@ -12,6 +12,53 @@ React.js
     Each component has a combined html, css and js
     meaning embedded markup, style and functionality
 
+JSX
+    JSX stands for JavaScript XML
+    
+    JSX allows us to write HTML elements in JavaScript and 
+    place them in the DOM without any createElement()  
+    and/or appendChild() methods.
+
+    You are not required to use JSX, 
+    but JSX makes it easier to write React applications.
+
+    Examples:
+        JSX:
+        const myelement = <h1>I Love JSX!</h1>;
+        ReactDOM.render(myelement, document.getElementById('root'));
+
+        Without JSX:
+        const myelement = React.createElement('h1', {}, 'I do not use JSX!');
+        ReactDOM.render(myelement, document.getElementById('root'));
+
+Babel
+    ReactDom uses babel to generate most common javascript code
+    from JSX statements.
+    It will permit your react app to run on older browsers.
+    https://babeljs.io/
+
+Expressions in JSX
+    With JSX you can write expressions inside curly braces { }.
+    The expression can be a React variable, or property, 
+    or any other valid JavaScript expression. 
+    JSX will execute the expression and return the result
+
+Inserting a Large Block of HTML in JSX
+    To write HTML on multiple lines, put the HTML inside parentheses.
+
+Referring to DOM properties inside JSX statements
+    Inside ReactDOM.render, it looks like plain HTML
+    but it is not, it is DOM / JSX
+    so if you use <h1 class="heading">
+    will occurs some warnings on browser
+    it is necessary to use DOM properties and methods
+    in this example, the correct is <h1 className="heading">
+    https://www.w3schools.com/jsref/dom_obj_all.asp
+
+JSX documentation
+    https://www.w3schools.com/react/react_jsx.asp
+    https://reactjs.org/docs/introducing-jsx.html
+
 Code Sandbox
     It is a website that permits to develop react.js 
     online, being very similar to vscode.
