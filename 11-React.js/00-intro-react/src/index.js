@@ -1,5 +1,9 @@
 //jshint esversion:6
 
+// this is how to import external modules on common javascript 
+// if you use require as on node.js (javascript ES6), 
+// you can have problems in some older browsers
+// this happens similarly on export 
 import React from 'react';
 import ReactDOM from 'react-dom';
 

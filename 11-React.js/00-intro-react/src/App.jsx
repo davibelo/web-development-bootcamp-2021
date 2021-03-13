@@ -3,6 +3,7 @@ import React from "react";
 
 // importing components
 import Expressions from "./components/Expressions";
+import Importing from "./components/Importing";
 import Styling from "./components/Styling";
 
 // making React/JSX App
@@ -12,6 +13,7 @@ function App() {
     <div>
       <Expressions/>
       <Styling/>      
+      <Importing/>
     </div>
   );
 }
