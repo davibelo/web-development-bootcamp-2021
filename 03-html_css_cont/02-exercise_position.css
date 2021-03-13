@@ -3,8 +3,8 @@
     height: 300px;
     width: 300px;
     position: relative;
-    left: 200px;
-    top: 100px;
+    left: 0px;
+    top: 0px;
 }
 
 .red {
@@ -12,7 +12,7 @@
     height: 100px;
     width: 100px;
     position: absolute;
-    left: 200px;
+    left: 100px;
     top: 100px;
 }
 
@@ -20,16 +20,16 @@
     background-color: blue;
     height: 100px;
     width: 100px;
-    position: absolute;
-    left:100px;
-    top: 200px;
+    position: relative;
+    left:0px;
+    top: 0px;
 }
 
 .yellow {
     background-color: yellow;
     height: 100px;
     width: 100px;
-    position: fixed;
+    position: absolute;
     left: 0px;
     top: 0px;
 }

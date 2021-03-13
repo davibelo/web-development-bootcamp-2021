@@ -81,7 +81,7 @@ CSS Position
                 position: relative;
                 top:50px;
                 }
-            This doesn't affect other elements positions.
+            This doesn't affect other elements positions.            
         3. Absolute
             Adds coordinates values to the element relative to its parent element
             If the parent occupies all width of screen, looks like it is an absolute positioning
@@ -97,11 +97,10 @@ CSS Position
 
 CSS z-index 
     It represents object order in z-axis, this defines what appears in front on the webpage
-    It doesn't work with position fixed
-    Use integer numbers as z-index. Higher the number, closer to the viewer it becomes
+    Use integer numbers as z-index. Higher the number, closer to the viewer it becomes.    
     The default z-index of all elements is 0 !!!
     Elements with the same z-index, the order become HTML order !!!
-    
+    It doesn't work with position fixed
 
 CSS Float
     You can make elements float and allow text to be wrapping around

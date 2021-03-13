@@ -1,7 +1,11 @@
 //jshint esversion:6
 import React from "react";
 
-function Header (){
-    <h1>Keeper App</h1>
+function Header() {
+  return (
+    <header>
+      <h1 className="header">Keeper App</h1>
+    </header>
+  );
 }
 export default Header;
