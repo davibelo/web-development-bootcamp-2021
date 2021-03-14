@@ -9,7 +9,8 @@ function App() {
   return (
     <div>
       <Header />
-      <Note />
+      <Note title="Example 1" content="note content here" />
+      <Note title="Example 2" content="note content here" />
       <Footer />
     </div>
   );

@@ -1,15 +1,11 @@
 //jshint esversion:6
 import React from "react";
 
-let noteTitle = "Web Bootcamp Notes";
-let noteContent =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
-
-function Note() {
+function Note(props) {
   return (
     <div className="note">
-      <h1>{noteTitle}</h1>
-      <p>{noteContent}</p>
+      <h1>{props.title}</h1>
+      <p>{props.content}</p>
     </div>
   );
 }
