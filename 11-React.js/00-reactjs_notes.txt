@@ -59,6 +59,13 @@ JSX documentation
     https://www.w3schools.com/react/react_jsx.asp
     https://reactjs.org/docs/introducing-jsx.html
 
+React Components
+    Components are independent and reusable bits of code. 
+    They serve the same purpose as JavaScript functions, 
+    but work in isolation and return HTML via a render() function.    
+    
+    Create a new component, if you see repeated code snippets.
+    Component's name must start with an upper case letter.
 
 React Properties (props)
     “Props” is a special keyword in React, 
@@ -89,6 +96,18 @@ React Properties (props)
     Furthermore, props data is read-only, 
     which means that data coming from the parent should not be changed by 
     child components.
+
+React Developer Tools
+    This is a chrome extension that can be used 
+    to navigate react components tree
+    see all props, etc...
+    
+    The React Dev Tools can be accessed on 
+    "Components" tab on Chrome Dev Tools (F12)
+    Click on gear to access view options...
+    Click on "<>" to view component code
+    
+    You can also use it on websites like airbnb, netflix
 
 Cloud Environment = Code Sandbox
     It is a website that permits to develop react.js 

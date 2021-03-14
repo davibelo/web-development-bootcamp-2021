@@ -3,6 +3,7 @@ import React from "react";
 
 // importing components
 import Card from "./Card";
+import Avatar from "./Avatar"
 
 import contacts from "../contacts";
 
@@ -11,6 +12,7 @@ function App() {
   return (
     <div>
       <h1 className="heading">My Contacts</h1>
+      <Avatar img="https://media-exp1.licdn.com/dms/image/C4E03AQHvh1pHb1KyxQ/profile-displayphoto-shrink_200_200/0/1593302247285?e=1621468800&v=beta&t=iRO1jHYer5m4Mta3SmFSW3zmejZIlCUIKqIQ1GOqris" />
       <Card
         name={contacts[0].name}
         img={contacts[0].imgURL}
