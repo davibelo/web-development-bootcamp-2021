@@ -28,7 +28,7 @@ function Styling() {
   return (
     <div>
       <h1 style={customStyleGreeting}>{greeting}</h1>
-      <h1 className="heading">My Favourite Foods</h1>
+      <h1 className="food-heading">My Favourite Foods</h1>
       <ul>
         <li>Bacon</li>
         <li>Ham</li>

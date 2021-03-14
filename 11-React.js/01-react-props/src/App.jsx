@@ -2,22 +2,13 @@
 import React from "react";
 
 // importing components
-import Expressions from "./components/Expressions";
-import Importing from "./components/Importing";
-import Styling from "./components/Styling";
 import Card from "./components/Card";
 
 // making React/JSX App
-// it calls other React Components
-// On Card Component, you can view props using example
 function App() {
   return (
     <div>
-      <Expressions />
-      <Styling />
-      <Importing />
-      <br></br>
-      <h1>My Contacts</h1>
+      <h1 className="contacts-heading">My Contacts</h1>
       <Card
         name="Beyonce"
         img="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
@@ -40,3 +31,10 @@ function App() {
   );
 }
 export default App;
+
+// On Card Component above:
+// You can view props using example
+// You can't common html attributes for Components
+// You can only use props
+// For class assignments or other HTML attributes
+// You have to work inside the component code
