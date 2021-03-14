@@ -59,28 +59,43 @@ JSX documentation
     https://www.w3schools.com/react/react_jsx.asp
     https://reactjs.org/docs/introducing-jsx.html
 
-Code Sandbox
+
+React Properties (props)
+    “Props” is a special keyword in React, 
+    It stands for properties and is being used for passing data 
+    from one component to another.
+    
+    It can be used as custom HTML elements attributes
+    
+    Example:
+        // Card Component:
+            function Card(props){
+                return (
+                    <div>
+                    <h1>{props.name}</h1>
+                    </div>
+                );
+            }
+
+        // ReactDOM rendering the component and using "name" property
+        ReactDOM.render(
+            <Card name ="Davi Belo/>,
+            document.getElementById('root')
+        )
+    
+    But the important part here is that data with props are being passed in 
+    a uni-directional flow. (one way from parent to child)
+    
+    Furthermore, props data is read-only, 
+    which means that data coming from the parent should not be changed by 
+    child components.
+
+Cloud Environment = Code Sandbox
     It is a website that permits to develop react.js 
     online, being very similar to vscode.
     https://codesandbox.io/
 
-Introduction to React.js 
-https://codesandbox.io/s/react-00-introduction-to-jsx-cr7s8
-
-Javascript Expressions in JSX
-https://codesandbox.io/s/react-01-javascript-expressions-in-jsx-szcuu
-
-JSX attributes and styling
-https://codesandbox.io/s/react-02-jsx-attributes-and-styling-upxk5
-
-React Components
-https://codesandbox.io/s/react-03-components-tc54h
-
-React Import and Export
-https://codesandbox.io/s/react-04-es6-importexport-i0fme
-https://codesandbox.io/s/react-041-es6-importexport-practice-8ybc3
-
-Setup Local Environment
+Setup of Local Environment
     1. Check if node is on LTS version
         > node --version
         Compare with LTS on node.js website
