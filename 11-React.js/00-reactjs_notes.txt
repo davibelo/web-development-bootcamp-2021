@@ -141,6 +141,4 @@ Setup of Local Environment
             Delete everything except first 2 imports
     7. Run React App local server
         Execute ">npm start" command inside app folder
-    
-
 
