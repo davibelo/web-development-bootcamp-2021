@@ -15,6 +15,7 @@ function createEntry(entry) {
   );
 }
 
+// using ForEach loop to map Entries
 // const Entries = [];
 // emojipedia.forEach(function(entry){
 //   let Entry = createEntry(entry);
@@ -29,7 +30,7 @@ function App() {
       </h1>
       <dl className="dictionary">{emojipedia.map(createEntry)}</dl>
       
-      {/* using ForEach construction */}
+      {/* using ForEach mapping */}
       {/* <dl className="dictionary">{Entries}</dl> */}
     </div>
   );
