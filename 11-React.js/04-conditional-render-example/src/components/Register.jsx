@@ -6,8 +6,9 @@ function Login() {
   return (
     <form className="form">
       <Input text="text" placeholder="Username" />
-      <Input text="Password" placeholder="Password" />   
-      <Button text="Login"/>
+      <Input text="Password" placeholder="Password" />
+      <Input text="Confirm Password" placeholder="Confirm Password" />
+      <Button text="Register" />
     </form>
   );
 }
