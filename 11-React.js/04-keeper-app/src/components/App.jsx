@@ -4,13 +4,16 @@ import React from "react";
 import Header from "./Header";
 import Note from "./Note";
 import Footer from "./Footer";
+import notes from "../notes";
 
 function App() {
   return (
     <div>
       <Header />
-      <Note title="Example 1" content="note content here" />
-      <Note title="Example 2" content="note content here" />
+      {/* creating notes with map method and a constructor callback */}
+      {notes.map((note) => (
+        <Note key={note.key} title={note.title} content={note.content} />
+      ))}
       <Footer />
     </div>
   );
