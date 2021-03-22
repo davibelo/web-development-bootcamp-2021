@@ -142,3 +142,14 @@ Setup of Local Environment
     7. Run React App local server
         Execute ">npm start" command inside app folder
 
+React Hooks
+    Hooks are a new addition in React 16.8. 
+        A Hook is a special function that lets 
+        you “hook into” React features.    
+        https://reactjs.org/docs/hooks-intro.html
+
+State Hook
+    A Hook that lets you add React state to function components
+    Its permits to render states dynamically.
+    https://reactjs.org/docs/hooks-state.html
+
