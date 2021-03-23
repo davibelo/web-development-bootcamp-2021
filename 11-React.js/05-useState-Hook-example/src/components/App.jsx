@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function App() {
   // useState consists of an array, with a state value and 
   // a function that updates the state value
-  // useState(x), where x is the initial state value
+  // calling useState(x), defines x as the initial state value
   // destructuring useState in a array of count and setCount
   const [count, setCount] = useState(0);
 

@@ -144,9 +144,9 @@ Setup of Local Environment
 
 React Hooks
     Hooks are a new addition in React 16.8. 
-        A Hook is a special function that lets 
-        you “hook into” React features.    
-        https://reactjs.org/docs/hooks-intro.html
+    A Hook is a special function that lets 
+    you “hook into” React features.    
+    https://reactjs.org/docs/hooks-intro.html
 
 State Hook
     A Hook that lets you add React state to function components
