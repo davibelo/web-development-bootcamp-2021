@@ -5,7 +5,7 @@ import Time from "./Time";
 function App() {
   return (
     <div>
-      <Counter />      
+      <Counter />
       <Time />
     </div>
   );
