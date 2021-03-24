@@ -16,7 +16,7 @@ function Time() {
   }
 
   // using setInterval to call the updateTime function periodically
-  setInterval(updateTime, 7000);
+  setInterval(updateTime, 10000);
 
   return (
     <div className="container">
