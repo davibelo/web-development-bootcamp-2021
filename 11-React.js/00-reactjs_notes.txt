@@ -153,3 +153,7 @@ State Hook
     Its permits to render states dynamically.
     https://reactjs.org/docs/hooks-state.html
 
+Handling Events on React
+    Use HTML Attributes inside JSX and state hooks.
+    (https://www.w3schools.com/tags/ref_eventattributes.asp)
+    
