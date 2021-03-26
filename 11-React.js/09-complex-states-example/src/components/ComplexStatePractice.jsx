@@ -40,7 +40,7 @@ function ComplexStatePractice() {
           email: value,
         };
       }
-    });    
+    });
   }
 
   return (
@@ -51,9 +51,24 @@ function ComplexStatePractice() {
       </h1>
       <p>{contact.email}</p>
       <form>
-        <input name="fName" placeholder="First Name" onChange={HandleChange} />
-        <input name="lName" placeholder="Last Name" onChange={HandleChange} />
-        <input name="email" placeholder="Email" onChange={HandleChange} />
+        <input
+          name="fName"
+          placeholder="First Name"
+          value={contact.FirstName}
+          onChange={HandleChange}
+        />
+        <input
+          name="lName"
+          placeholder="Last Name"
+          value={contact.LastName}
+          onChange={HandleChange}
+        />
+        <input
+          name="email"
+          placeholder="Email"
+          value={contact.email}
+          onChange={HandleChange}
+        />
         <button>Submit</button>
       </form>
     </div>

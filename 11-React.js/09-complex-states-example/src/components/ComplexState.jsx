@@ -33,14 +33,14 @@ function ComplexState() {
         <input
           name="fName"
           placeholder="First Name"
+          value={FullName.FirstName}
           onChange={handleChange}
-          // value={FirstName}
         />
         <input
           name="lName"
           placeholder="Last Name"
+          value={FullName.LastName}
           onChange={handleChange}
-          // value={LastName}
         />
         <button>Submit</button>
       </form>
