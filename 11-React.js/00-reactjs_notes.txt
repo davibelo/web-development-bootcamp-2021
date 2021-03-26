@@ -150,8 +150,9 @@ React Hooks
 
 State Hook
     A Hook that lets you add React state to function components
-    Its permits to render states dynamically.
+    Its permits to render states dynamically.    
     https://reactjs.org/docs/hooks-state.html
+    
 
 Handling Events on React
     Use HTML Attributes inside JSX and state hooks.
@@ -161,3 +162,20 @@ React Forms
     HTML form elements work a little bit differently from other DOM elements in React, because form elements 
     naturally keep some internal state.
     https://reactjs.org/docs/forms.html
+
+Class Components   
+    To use state without the state hook, it is necessary
+    to use class components instead of functional components
+    https://reactjs.org/docs/state-and-lifecycle.html
+
+Use classes or hooks?
+    https://reactjs.org/docs/hooks-faq.html#should-i-use-hooks-classes-or-a-mix-of-both
+    New code 
+        = Use hooks
+    Old code with already ClassComponents 
+        = Continue to use ClassComponent code or change everything
+
+
+
+
+
