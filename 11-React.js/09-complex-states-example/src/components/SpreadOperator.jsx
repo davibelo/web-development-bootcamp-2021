@@ -8,30 +8,20 @@ function ComplexStatePractice() {
   });
 
   function HandleChange(event) {
-    const { value, name: inputName } = event.target;
+    const { value, name } = event.target;
 
     setContact((prevValue) => {
-      if (inputName === "fName") {
-        return {
-          FirstName: value,
-          LastName: prevValue.LastName,
-          email: prevValue.email,
-        };
-      } else if (inputName === "lName") {
-        return {
-          FirstName: prevValue.FirstName,
-          LastName: value,
-          email: prevValue.email,
-        };
-      } else if (inputName === "email") {
-        return {
-          FirstName: prevValue.FirstName,
-          LastName: prevValue.LastName,
-          email: value,
-        };
-      }
+      return {
+        ...prevValue,
+        [name]: value,
+      };
     });
   }
+
+  // why "name" above is inside square brackets?
+  // ES6 permits this syntax to consider the name as a key property of the object
+  // otherwise javascript will consider it as a string and the code will not work
+  // https://stackoverflow.com/questions/11508463/javascript-set-object-key-by-variable?noredirect=1&lq=1
 
   return (
     <div className="container">
@@ -42,13 +32,13 @@ function ComplexStatePractice() {
       <p>{contact.email}</p>
       <form>
         <input
-          name="fName"
+          name="FirstName"
           placeholder="First Name"
           value={contact.FirstName}
           onChange={HandleChange}
         />
         <input
-          name="lName"
+          name="LastName"
           placeholder="Last Name"
           value={contact.LastName}
           onChange={HandleChange}
