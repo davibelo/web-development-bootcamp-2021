@@ -21,14 +21,15 @@ function ComplexState() {
         };
       }
     });
-  }  
-
+  }
+  console.log(FullName);
   return (
     <div className="container">
+      <p>ComplexState Example</p>
       <h1>
         Hello {FullName.FirstName} {FullName.LastName}!
       </h1>
-      <form >
+      <form>
         <input
           name="fName"
           placeholder="First Name"

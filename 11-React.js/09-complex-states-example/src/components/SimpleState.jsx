@@ -20,6 +20,7 @@ function SimpleState() {
 
   return (
     <div className="container">
+      <p>Simple State Example</p>
       <h1>Hello {Name} !</h1>
       <form onSubmit={handleSubmit}>
         <input

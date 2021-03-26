@@ -1,14 +1,17 @@
 import React from "react";
 import SimpleState from "./SimpleState";
 import ComplexState from "./ComplexState";
+import ComplexStatePractice from "./ComplexStatePractice";
 
 function App() {
   return (
     <div>
+      <ComplexStatePractice />      
+      <ComplexState />      
       <SimpleState />
-      <ComplexState />
     </div>
   );
 }
 
 export default App;
+
