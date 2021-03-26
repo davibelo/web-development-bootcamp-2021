@@ -157,3 +157,7 @@ Handling Events on React
     Use HTML Attributes inside JSX and state hooks.
     (https://www.w3schools.com/tags/ref_eventattributes.asp)
     
+React Forms
+    HTML form elements work a little bit differently from other DOM elements in React, because form elements 
+    naturally keep some internal state.
+    https://reactjs.org/docs/forms.html
