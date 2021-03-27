@@ -7,15 +7,35 @@ function ComplexStatePractice() {
     email: "",
   });
 
-  function HandleChange(event) {
+  const [contactFields, setContactFields] = useState({
+    FirstName: "",
+    LastName: "",
+    email: "",
+  });
+
+  function handleChange(event) {
     const { value, name } = event.target;
 
-    setContact((prevValue) => {
+    setContactFields((prevValue) => {
       return {
         ...prevValue,
         [name]: value,
       };
     });
+  }
+
+  function handleSubmit(event) {
+    setContact({
+      FirstName: contactFields.FirstName,
+      LastName: contactFields.LastName,
+      email: contactFields.email,
+    });
+    setContactFields({
+      FirstName: "",
+      LastName: "",
+      email: "",
+    });
+    event.preventDefault();
   }
 
   // why "name" above is inside square brackets?
@@ -30,26 +50,26 @@ function ComplexStatePractice() {
         Hello {contact.FirstName} {contact.LastName}
       </h1>
       <p>{contact.email}</p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           name="FirstName"
           placeholder="First Name"
-          value={contact.FirstName}
-          onChange={HandleChange}
+          value={contactFields.FirstName}
+          onChange={handleChange}
         />
         <input
           name="LastName"
           placeholder="Last Name"
-          value={contact.LastName}
-          onChange={HandleChange}
+          value={contactFields.LastName}
+          onChange={handleChange}
         />
         <input
           name="email"
           placeholder="Email"
-          value={contact.email}
-          onChange={HandleChange}
+          value={contactFields.email}
+          onChange={handleChange}
         />
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

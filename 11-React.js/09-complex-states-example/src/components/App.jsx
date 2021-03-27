@@ -8,9 +8,9 @@ function App() {
   return (
     <div>
       <SpreadOperator />      
-      <ComplexStatePractice />      
+      {/* <ComplexStatePractice />      
       <ComplexState />      
-      <SimpleState />
+      <SimpleState /> */}
     </div>
   );
 }
