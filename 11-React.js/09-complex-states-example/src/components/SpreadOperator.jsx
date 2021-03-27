@@ -24,6 +24,11 @@ function ComplexStatePractice() {
     });
   }
 
+  // why "name" above is inside square brackets?
+  // ES6 permits this syntax to consider the name as a key property of the object
+  // otherwise javascript will consider it as a string and the code will not work
+  // https://stackoverflow.com/questions/11508463/javascript-set-object-key-by-variable?noredirect=1&lq=1
+
   function handleSubmit(event) {
     setContact({
       FirstName: contactFields.FirstName,
@@ -37,11 +42,6 @@ function ComplexStatePractice() {
     });
     event.preventDefault();
   }
-
-  // why "name" above is inside square brackets?
-  // ES6 permits this syntax to consider the name as a key property of the object
-  // otherwise javascript will consider it as a string and the code will not work
-  // https://stackoverflow.com/questions/11508463/javascript-set-object-key-by-variable?noredirect=1&lq=1
 
   return (
     <div className="container">
