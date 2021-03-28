@@ -9,6 +9,9 @@ function Form(props) {
       <Input text="Password" placeholder="Password" />
       {/* Conditional using AND operator in react:*/}
       {/* (condition) && (expression if true) */}
+      {/* explanation:*/}
+      {/* expression side will always be evaluated as true */}
+      {/* if condition side is true, the expression will be passed as result */}
       {!props.isRegistered && (
         <Input text="Confirm Password" placeholder="Confirm Password" />
       )}
