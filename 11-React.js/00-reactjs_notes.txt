@@ -175,7 +175,12 @@ Use classes or hooks?
     Old code with already ClassComponents 
         = Continue to use ClassComponent code or change everything
 
+Using external library of react components:
+    To develop react faster, add dependencies like MATERIAL-UI
 
-
+MATERIAL-UI
+    React components for faster and easier web development. 
+    Build your own design system, or start with Material Design.
+    https://material-ui.com/
 
 
