@@ -183,4 +183,5 @@ MATERIAL-UI
     Build your own design system, or start with Material Design.
     https://material-ui.com/
 
-
+    Material Icons
+        https://material-ui.com/components/material-icons/#material-icons

@@ -32,7 +32,7 @@ function App() {
     <div>
       <Header />
       {/* the addNote function passes thru to CreateArea Component by onAdd props */}
-      <CreateArea onAdd={addNote} />
+      <CreateArea onAdd={addNote}/>
       {/* creating notes with map method and a constructor callback */}
       {notes.map((noteItem, index) => (
         <Note
