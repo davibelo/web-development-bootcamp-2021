@@ -6,8 +6,9 @@
 html {
   font-family: "Montserrat", sans-serif;
 }
-body {
-  background: #eee;
+body {  
+  background-color: #eee;  
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");  
   padding: 0 16px;
 }
 
